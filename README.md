@@ -69,40 +69,38 @@ All source code goes to folder `src`.
 
 ## Packages
 
+The following packages are used in this project by default.
+
 ### Shared UNCTAD packages
 
-* **@unctad-infovis/general-tools** — shared React components (`BackToTop`,
-  `ChartDataWrapper`, `Image`, `ProgressBar`, `Quote`, `UNCTADSiteHeader`, …),
-  helpers and base design-token styles.
-* **@unctad-infovis/minisite-tools** — report/minisite layout components
-  (`Header`, `HeaderChapter`, `Footer`, `SideScrollingText`).
+* **@unctad-infovis/general-tools** — shared React components (`ButtonAnchor`, `ButtonShare`, `ChartDataWrapper`, `Image`, `ProgressBar`, `Quote`, `Select`, `Tooltip`, `UNCTADSiteHeader`, `BackToTop`, …), helpers (`BasePath`, `LoadFile`, `CsvToJson`, `FormatNr`, `RoundNr`, `UseIsVisible`, …) and base design-token styles
+* **@unctad-infovis/minisite-tools** — report/minisite layout components (`Header`, `HeaderChapter`, `Footer`, `SideScrollingText`)
 
-These are published from the `un-init-project` monorepo to GitHub Packages, so
-`.npmrc` + a `GITHUB_PACKAGES_TOKEN` env var are required to install.
+Both are published from the [`un-init-project`](https://github.com/unctad-infovis/un-init-project) monorepo to GitHub Packages, so installing needs an `.npmrc` with `@unctad-infovis:registry=https://npm.pkg.github.com` and a `GITHUB_PACKAGES_TOKEN` environment variable.
+
+### Project specific
+
+* none yet — `d3`, `highcharts` and `uuid4` (used by the sibling report projects for data visualisations) will be added once the first TDR chart is built
 
 ### Build & Dev Server
 
-* **vite** — dev server with HMR and production bundler.
-* **@vitejs/plugin-react** — React / JSX support for Vite.
+* **vite** — development server with hot module replacement and production bundler, replaces webpack
+* **@vitejs/plugin-react** — adds React and JSX support to Vite
 
 ### React
 
-* **react** / **react-dom** — UI library and DOM renderer.
+* **react** — UI component library
+* **react-dom** — renders React components to the DOM
 
 ### Formatter & Linter
 
-* **@biomejs/biome** — formats and lints JS, JSX and CSS.
+* **@biomejs/biome** — formats and lints JS, JSX and CSS files on save, replaces ESLint + Prettier
 
 ### Minification
 
-* **terser** — minifies the production bundle, drops `console.*` in production builds.
+* **terser** — minifies the production JavaScript bundle, removes console.logs in production builds
 
 ### MDX
 
-* **@mdx-js/rollup** — compiles MDX files into React components.
-* **@mdx-js/react** — React context provider for MDX components.
-
-### To be added when charts arrive
-
-`d3`, `highcharts` and `uuid4` are used by the sibling report projects for
-data visualisations; add them here once the first TDR chart is built.
+* **@mdx-js/rollup** — Vite/Rollup plugin that compiles MDX files into React components
+* **@mdx-js/react** — provides React context for MDX components
