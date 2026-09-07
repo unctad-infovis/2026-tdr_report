@@ -1,6 +1,5 @@
-import { createRoot } from 'react-dom/client';
-
 import UNCTADSiteHeader from '@unctad-infovis/general-tools/components/UNCTADSiteHeader.jsx';
+import { createRoot } from 'react-dom/client';
 
 import meta from './../meta.json';
 import App from './App.jsx';
