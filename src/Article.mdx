@@ -1,0 +1,185 @@
+{/*
+  ============================================================================
+  Trade and Development Report 2026 – minisite content
+  ----------------------------------------------------------------------------
+  This file is the whole narrative. It is authored in MDX: Markdown for the
+  copy, React components (passed in from App.jsx via `components`) for the
+  interactive / layout pieces. `props.meta` is `src/meta.json`.
+
+  Everything below is PLACEHOLDER structure mirroring last year's WIR minisite.
+  Replace the copy, chapter titles (`src/meta.json`), images
+  (`public/assets/img/…`) and `<ChartDataWrapper chart_id="…" />` ids once the
+  real TDR 2026 content is available.
+  ============================================================================
+*/}
+
+<Header
+  bg_image_url={props.meta.image_url}
+  chapters={props.meta.chapters}
+  full_report_url={props.meta.full_report_url}
+  overview_url={props.meta.overview_url}
+  subtitle={props.meta.subtitle}
+  title={props.meta.title}
+  year={<span>20<span>26</span></span>}
+/>
+
+{/*********************************************
+ *************** INTRO ************************
+ *********************************************/}
+
+<div className="container_chapter">
+  #### One-sentence hook for the report goes here – placeholder.
+
+  Opening paragraph of the overview – placeholder. Two or three short paragraphs
+  that frame the year's story before the chapters begin.
+
+  Second overview paragraph – placeholder.
+
+  <Quote
+    name="Name Surname"
+    text="Pull quote from the Secretary-General or report lead – placeholder."
+    title="Secretary-General of UN Trade and Development (UNCTAD)"
+  />
+</div>
+
+<ProgressBar selector=".container_chapters" />
+<BackToTop selector=".container_header" />
+
+<div className="container_chapters">
+
+  {/*********************************************
+   *************** CHAPTER 1 *******************
+   *********************************************/}
+
+  <SideScrollingText
+    header="Chapter 1"
+    image_url="assets/img/2026-tdr_report_chapter1_orig.jpg"
+    texts={[
+      'Scroll-in question that sets up chapter 1 – placeholder.',
+      'A second line that sharpens it – placeholder.'
+    ]}
+  />
+
+  <div className="container_chapter container_chapter_1 chapter_header_1">
+    <HeaderChapter
+      image_url={props.meta.chapters[0].image_url}
+      pdf_url={props.meta.chapters[0].pdf_url}
+      subtitle={props.meta.chapters[0].subtitle}
+      title={props.meta.chapters[0].title}
+    />
+
+    <div className="highlight_container">
+      ### The takeaway
+
+      One-paragraph summary of the chapter's core finding – placeholder.
+    </div>
+
+    <strong>Lead finding of the chapter, in bold – placeholder.</strong> Supporting
+    sentence with the number that backs it up – placeholder.
+
+    {/* FIGURE – short description of the chart – replace chart_id */}
+    <ChartDataWrapper chart_id="PLACEHOLDER" />
+
+    Follow-up paragraph interpreting the figure – placeholder.
+
+    <div className="highlight_container">
+      ### Calls to action
+
+      - First recommendation – placeholder.
+      - Second recommendation – placeholder.
+      - Third recommendation – placeholder.
+    </div>
+  </div>
+
+  {/*********************************************
+   *************** CHAPTER 2 *******************
+   *********************************************/}
+
+  <SideScrollingText
+    header="Chapter 2"
+    image_url="assets/img/2026-tdr_report_chapter2_orig.jpg"
+    texts={[
+      'Scroll-in question that sets up chapter 2 – placeholder.',
+      'A second line that sharpens it – placeholder.'
+    ]}
+  />
+
+  <div className="container_chapter container_chapter_2 chapter_header_2">
+    <HeaderChapter
+      image_url={props.meta.chapters[1].image_url}
+      pdf_url={props.meta.chapters[1].pdf_url}
+      subtitle={props.meta.chapters[1].subtitle}
+      title={props.meta.chapters[1].title}
+    />
+
+    <div className="highlight_container">
+      ### The takeaway
+
+      One-paragraph summary of the chapter's core finding – placeholder.
+    </div>
+
+    <strong>Lead finding of the chapter, in bold – placeholder.</strong> Supporting
+    sentence – placeholder.
+
+    {/* FIGURE – short description of the chart – replace chart_id */}
+    <ChartDataWrapper chart_id="PLACEHOLDER" />
+
+    Follow-up paragraph – placeholder.
+
+    <div className="highlight_container">
+      ### Calls to action
+
+      - First recommendation – placeholder.
+      - Second recommendation – placeholder.
+    </div>
+  </div>
+
+  {/*********************************************
+   *************** CHAPTER 3 *******************
+   *********************************************/}
+
+  <SideScrollingText
+    header="Chapter 3"
+    image_url="assets/img/2026-tdr_report_chapter3_orig.jpg"
+    texts={[
+      'Scroll-in question that sets up chapter 3 – placeholder.',
+      'A second line that sharpens it – placeholder.'
+    ]}
+  />
+
+  <div className="container_chapter container_chapter_3 chapter_header_3">
+    <HeaderChapter
+      image_url={props.meta.chapters[2].image_url}
+      pdf_url={props.meta.chapters[2].pdf_url}
+      subtitle={props.meta.chapters[2].subtitle}
+      title={props.meta.chapters[2].title}
+    />
+
+    <div className="highlight_container">
+      ### The takeaway
+
+      One-paragraph summary of the chapter's core finding – placeholder.
+    </div>
+
+    <strong>Lead finding of the chapter, in bold – placeholder.</strong> Supporting
+    sentence – placeholder.
+
+    {/* FIGURE – short description of the chart – replace chart_id */}
+    <ChartDataWrapper chart_id="PLACEHOLDER" />
+
+    Follow-up paragraph – placeholder.
+
+    <div className="highlight_container">
+      ### Calls to action
+
+      - First recommendation – placeholder.
+      - Second recommendation – placeholder.
+    </div>
+  </div>
+</div>
+
+<Footer
+  reportUrl={props.meta.full_report_url}
+  videoTitle="Trade and Development Report 2026"
+  launchEventTitle="Trade and Development Report 2026 – Press conference"
+/>

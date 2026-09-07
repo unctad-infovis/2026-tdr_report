@@ -1,0 +1,30 @@
+{
+  "chapters": [
+    {
+      "image_url": "assets/img/2026-tdr_report_chapter1.jpg?v=1",
+      "pdf_url": "",
+      "subtitle": "Chapter 1 subtitle – placeholder",
+      "title": "Chapter 1 title – placeholder"
+    },
+    {
+      "image_url": "assets/img/2026-tdr_report_chapter2.jpg?v=1",
+      "pdf_url": "",
+      "subtitle": "Chapter 2 subtitle – placeholder",
+      "title": "Chapter 2 title – placeholder"
+    },
+    {
+      "image_url": "assets/img/2026-tdr_report_chapter3.jpg?v=1",
+      "pdf_url": "",
+      "subtitle": "Chapter 3 subtitle – placeholder",
+      "title": "Chapter 3 title – placeholder"
+    }
+  ],
+  "full_report_url": "",
+  "image_url": "assets/img/2026-tdr_report_main.jpg?v=1",
+  "overview_url": "",
+  "show_site_header": true,
+  "subtitle": "Report subtitle – placeholder",
+  "title": "Trade and Development Report",
+  "year": "2026",
+  "url": "https://unctad.org/publication/trade-and-development-report-2026"
+}

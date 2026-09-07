@@ -1,0 +1,68 @@
+/* Layout + narrative styles for the TDR minisite. The chapter reveal animation, list bullets and
+   base `.container_chapter` frame come from `@unctad-infovis/minisite-tools/components/minisite.css`
+   (imported in App.jsx); everything here is project-specific on top of that. */
+
+:root {
+  --un-font-size-highlight: 20px;
+}
+
+#app-root-2026-tdr_report .app {
+  h3,
+  h4,
+  p,
+  ul {
+    padding: 0;
+  }
+  ul {
+    box-sizing: border-box;
+    font-size: var(--un-font-size-normal);
+    font-weight: var(--un-font-weight-normal);
+    line-height: var(--un-line-height-normal);
+    margin: auto auto 20px auto;
+    max-width: 700px;
+  }
+  p,
+  ul {
+    a {
+      color: #000;
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  .container_chapter {
+    border-bottom-color: var(--main-color);
+    ul li::before {
+      background-image: url('https://storage.unctad.org/shared-resources/icons/arrow_yellow.png');
+    }
+  }
+  .highlight_container {
+    background: var(--main-color);
+    border-radius: 10px;
+    box-sizing: content-box;
+    color: #fff;
+    margin: 40px auto;
+    max-width: 700px;
+    padding: 20px 20px 1px 20px;
+    h3 {
+      font-weight: var(--un-font-weight-bolder);
+    }
+    p,
+    ul li {
+      font-size: var(--un-font-size-highlight);
+      line-height: 1.5;
+    }
+  }
+  .height_100vh {
+    min-height: 100svh;
+  }
+  .two_column {
+    gap: 10px;
+    margin: auto auto;
+    max-width: 1000px;
+    @media all and (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+}
