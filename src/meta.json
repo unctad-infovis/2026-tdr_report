@@ -3,27 +3,27 @@
     {
       "image_url": "assets/img/2026-tdr_report_chapter1.jpg?v=1",
       "pdf_url": "",
-      "subtitle": "Chapter 1 subtitle – placeholder",
-      "title": "Chapter 1 title – placeholder"
+      "subtitle": "Three pressures on resilient growth",
+      "title": "Resilience and its limits"
     },
     {
       "image_url": "assets/img/2026-tdr_report_chapter2.jpg?v=1",
       "pdf_url": "",
-      "subtitle": "Chapter 2 subtitle – placeholder",
-      "title": "Chapter 2 title – placeholder"
+      "subtitle": "The new geography of trade",
+      "title": "Selective fragmentation"
     },
     {
       "image_url": "assets/img/2026-tdr_report_chapter3.jpg?v=1",
       "pdf_url": "",
-      "subtitle": "Chapter 3 subtitle – placeholder",
-      "title": "Chapter 3 title – placeholder"
+      "subtitle": "Industrialization and export growth helped parts of Asia catch up, but strategic-sector competition is making that path harder to follow",
+      "title": "Development in the age of geoeconomics"
     }
   ],
-  "full_report_url": "",
+  "full_report_url": "https://unctad.org/system/files/official-document/tdr2026_en.pdf",
   "image_url": "assets/img/2026-tdr_report_main.jpg?v=1",
-  "overview_url": "",
+  "overview_url": "https://unctad.org/system/files/official-document/tdr2026overview_en.pdf",
   "show_site_header": true,
-  "subtitle": "Report subtitle – placeholder",
+  "subtitle": "The geoeconomics of development",
   "title": "Trade and Development Report",
   "year": "2026",
   "url": "https://unctad.org/publication/trade-and-development-report-2026"
