@@ -9,9 +9,7 @@ import { useEffect, useRef } from 'react';
 
 import Article from '../Article.mdx';
 
-// Project-specific chart components go here as they are built, e.g.:
-// import ChartExample from './components/ChartExample.jsx';
-
+import ChartMarimekko from './components/marimekko/ChartMarimekko.jsx';
 import Footer from './components/minisite/Footer.jsx';
 import Header from './components/minisite/Header.jsx';
 import HeaderChapter from './components/minisite/HeaderChapter.jsx';
@@ -23,6 +21,7 @@ import './components/minisite/minisite.css';
 const components = {
   BackToTop,
   ChartDataWrapper,
+  ChartMarimekko,
   Footer,
   Header,
   HeaderChapter,

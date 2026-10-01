@@ -1,0 +1,197 @@
+@import url('./colors.css');
+/* Box figure I.3.2 – mirrors the Datawrapper UNCTAD theme used by the other charts on the page */
+#app-root-2026-tdr_report .app {
+  figure.container_chart_marimekko {
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 650px;
+    padding: 0 10px;
+    width: 100%;
+    .chart_marimekko {
+      background-color: var(--chart-bg);
+      border-bottom: 6px solid var(--un-color-blue);
+      color: #000;
+      font-family: Inter, Arial, sans-serif;
+      padding: 20px;
+      text-align: left;
+      .chart_header {
+        align-items: flex-start;
+        display: flex;
+        gap: 12px;
+        .chart_arrow {
+          fill: var(--un-color-blue);
+          flex-shrink: 0;
+          height: 44px;
+          width: 44px;
+        }
+        h3 {
+          font-size: var(--un-font-size-xl);
+          font-weight: var(--un-font-weight-bolder);
+          line-height: var(--un-line-height-small);
+          margin: 0;
+          padding: 0;
+          @media (max-width: 500px) {
+            font-size: var(--un-font-size-normal);
+          }
+        }
+      }
+      .chart_description {
+        font-size: var(--un-font-size-xs);
+        font-weight: var(--un-font-weight-normal);
+        line-height: var(--un-line-height-normal);
+        margin: 14px 0 0 0;
+        max-width: none;
+        opacity: 1;
+        padding: 0;
+      }
+      .chart_legend {
+        color: var(--un-color-grey-dark);
+        display: flex;
+        flex-wrap: wrap;
+        font-size: var(--un-font-size-xxs);
+        gap: 4px 14px;
+        list-style: none;
+        margin: 16px 0 0 0;
+        max-width: none;
+        opacity: 1;
+        padding: 0;
+        li {
+          align-items: center;
+          display: flex;
+          gap: 6px;
+          margin: 0;
+          padding: 0;
+          &::before {
+            display: none;
+          }
+        }
+        .swatch {
+          display: inline-block;
+          height: 14px;
+          width: 14px;
+        }
+      }
+      .chart_body {
+        margin-top: 20px;
+        position: relative;
+        svg {
+          display: block;
+          overflow: visible;
+        }
+        .grid {
+          line {
+            stroke: var(--un-color-grey);
+            stroke-dasharray: 1 2;
+          }
+          text {
+            fill: var(--un-color-grey-dark);
+            font-size: var(--un-font-size-xxs);
+          }
+        }
+        .baseline {
+          stroke: #000;
+        }
+        .column rect {
+          cursor: pointer;
+          outline: none;
+          stroke: var(--chart-bg);
+          stroke-width: 1px;
+          transition: opacity 0.2s;
+          &.dimmed {
+            opacity: 0.55;
+          }
+          &:focus-visible {
+            stroke: #000;
+            stroke-width: 2px;
+          }
+        }
+        .segment_label {
+          dominant-baseline: middle;
+          font-size: var(--un-font-size-xxs);
+          font-weight: var(--un-font-weight-bold);
+          pointer-events: none;
+          text-anchor: middle;
+        }
+        .column_label {
+          font-size: var(--un-font-size-xxs);
+          text-anchor: middle;
+          .narrow & {
+            font-size: var(--un-font-size-xxxs);
+          }
+          .name {
+            fill: #000;
+            font-weight: var(--un-font-weight-bold);
+          }
+          .share {
+            fill: var(--un-color-grey-dark);
+          }
+        }
+        .leaders path {
+          fill: none;
+          stroke: var(--un-color-grey);
+          stroke-width: 1px;
+        }
+      }
+      .chart_tooltip {
+        background-color: #fff;
+        border: 1px solid var(--un-color-grey-light);
+        font-size: var(--un-font-size-xxs);
+        line-height: var(--un-line-height-normal);
+        padding: 8px 10px;
+        pointer-events: none;
+        position: absolute;
+        transform: translate(-50%, calc(-100% - 12px));
+        white-space: nowrap;
+        z-index: 2;
+        .swatch {
+          display: inline-block;
+          height: 10px;
+          width: 10px;
+        }
+        .tooltip_row {
+          align-items: center;
+          display: flex;
+          gap: 6px;
+          strong {
+            font-weight: var(--un-font-weight-bolder);
+            margin-left: auto;
+            padding-left: 12px;
+          }
+        }
+        .tooltip_title {
+          font-weight: var(--un-font-weight-bolder);
+          margin-bottom: 4px;
+        }
+        .tooltip_total {
+          color: var(--un-color-grey-dark);
+          margin-top: 4px;
+        }
+      }
+      .chart_meta {
+        display: flex;
+        flex-direction: column;
+        font-size: var(--un-font-size-xxxs);
+        gap: 5px;
+        line-height: var(--un-line-height-normal);
+        margin-top: 20px;
+        a {
+          color: var(--un-color-blue);
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #app-root-2026-tdr_report .app figure.container_chart_marimekko {
+    .parallax_container {
+      transition: none;
+    }
+    .chart_body .column rect {
+      transition: none;
+    }
+  }
+}
