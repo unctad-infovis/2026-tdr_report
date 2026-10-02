@@ -1,7 +1,7 @@
 import useIsVisible from '@unctad-infovis/general-tools/helpers/UseIsVisible.js';
 import { useEffect, useRef, useState } from 'react';
 
-import { drawChart, formatPct } from './custom/chart.js';
+import { drawChart, formatPct, highlightColumn } from './custom/chart.js';
 import { CSV, SUPPLIERS } from './custom/data.js';
 
 import './styles/styles.css';
@@ -13,13 +13,43 @@ const SOURCE = 'UN Trade and Development (UNCTAD).';
 
 const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-const ChartMarimekko = () => {
+export const ChartMarimekkoMeta = () => (
+  <div className="chart_marimekko_meta">
+    <div>
+      <em>Source:</em> {SOURCE}
+    </div>
+    <div>
+      <em>Note:</em> {NOTE}
+    </div>
+    <a download="tdr2026_box_figure_I_3_2.csv" href={`data:text/csv;charset=utf-8,${encodeURIComponent(CSV)}`}>
+      Get the data
+    </a>
+  </div>
+);
+
+const ChartMarimekko = ({ activeColumn = null, scrollStory = false }) => {
   const [setFigureNode, isVisible] = useIsVisible(0.4);
   const chartRef = useRef(null);
   const svgRef = useRef(null);
   const animatedRef = useRef(false);
+  const activeColumnRef = useRef(activeColumn);
   const [width, setWidth] = useState(0);
   const [tooltip, setTooltip] = useState(null);
+  const [viewportHeight, setViewportHeight] = useState(() => window.innerHeight);
+  const [plotHeightBudget, setPlotHeightBudget] = useState(340);
+
+  useEffect(() => {
+    activeColumnRef.current = activeColumn;
+    highlightColumn(svgRef.current, activeColumn);
+    setTooltip(null);
+  }, [activeColumn]);
+
+  useEffect(() => {
+    if (!scrollStory) return undefined;
+    const onResize = () => setViewportHeight(window.innerHeight);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, [scrollStory]);
 
   useEffect(() => {
     const node = chartRef.current;
@@ -30,11 +60,12 @@ const ChartMarimekko = () => {
   }, []);
 
   useEffect(() => {
-    if (!width || !isVisible) return;
-    const animate = !animatedRef.current && !prefersReducedMotion();
+    if (!width || (!isVisible && !scrollStory)) return;
+    const animate = !scrollStory && !animatedRef.current && !prefersReducedMotion();
     animatedRef.current = true;
-    drawChart(svgRef.current, {
+    const { plotHeight } = drawChart(svgRef.current, {
       animate,
+      maxPlotHeight: scrollStory ? plotHeightBudget : 340,
       onHover: (segment, event) => {
         if (!segment) {
           setTooltip(null);
@@ -48,13 +79,17 @@ const ChartMarimekko = () => {
       },
       width
     });
-  }, [isVisible, width]);
-
-  const csvHref = `data:text/csv;charset=utf-8,${encodeURIComponent(CSV)}`;
+    if (scrollStory) {
+      const chromeHeight = chartRef.current.closest('.chart_marimekko').getBoundingClientRect().height - plotHeight;
+      setPlotHeightBudget(Math.max(40, Math.min(340, Math.floor(viewportHeight - chromeHeight - 32))));
+    }
+    highlightColumn(svgRef.current, activeColumnRef.current);
+    setTooltip(null);
+  }, [isVisible, plotHeightBudget, scrollStory, viewportHeight, width]);
 
   return (
-    <figure className="container_chart_marimekko" ref={setFigureNode}>
-      <div className="parallax_container" style={{ opacity: isVisible ? '1' : '0', top: isVisible ? '0px' : '50px' }}>
+    <figure className={`container_chart_marimekko${scrollStory ? ' chart_marimekko_story_figure' : ''}`} ref={setFigureNode}>
+      <div className="parallax_container" style={{ opacity: isVisible || scrollStory ? '1' : '0', top: isVisible || scrollStory ? '0px' : '50px' }}>
         <div className="chart_marimekko">
           <div className="chart_header">
             <svg className="chart_arrow" viewBox="0 0 288.8 289.6" aria-hidden="true">
@@ -62,7 +97,7 @@ const ChartMarimekko = () => {
             </svg>
             <h3>{TITLE}</h3>
           </div>
-          <p className="chart_description">{DESCRIPTION}</p>
+          <p className="chart_description">{scrollStory ? 'Share of traced value added by income type and supplier group, percentage' : DESCRIPTION}</p>
           <ul className="chart_legend">
             {SUPPLIERS.map(s => (
               <li key={s.key}>
@@ -91,17 +126,7 @@ const ChartMarimekko = () => {
               </div>
             )}
           </div>
-          <div className="chart_meta">
-            <div>
-              <em>Source:</em> {SOURCE}
-            </div>
-            <div>
-              <em>Note:</em> {NOTE}
-            </div>
-            <a download="tdr2026_box_figure_I_3_2.csv" href={csvHref}>
-              Get the data
-            </a>
-          </div>
+          <ChartMarimekkoMeta />
         </div>
       </div>
     </figure>

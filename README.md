@@ -67,6 +67,21 @@ All source code goes to folder `src`.
 * `src/jsx/App.css` – project-specific layout and narrative styles.
 * `src/jsx/components/` – project-specific components (chart wrappers etc.).
 
+### Marimekko scroll narrative
+
+Box Figure I.3.2 uses `marimekko/ChartMarimekkoStory.jsx` to keep a single
+Marimekko chart sticky beside five explanation panels. The `STAGES` array defines
+the introduction, three column highlights and conclusion; a `null` column shows
+the full chart. Column keys come from `marimekko/custom/data.js`. Scrolling in
+either direction updates the emphasis without changing column widths or supplier
+colours. Hover effects and tooltips are disabled during column highlights and
+restored when the full chart is shown. The underlying `ChartMarimekko.jsx` also supports standalone use without
+the `scrollStory` prop. On mobile, the explanation panels scroll over the chart;
+reduced-motion preferences disable the emphasis transitions. The source, note and
+CSV download stay inside the sticky chart wrapper, below the plot. The scrolling
+version omits the blue bottom border and allows internal scrolling on short
+screens when the chart and its metadata cannot fit together.
+
 ## Packages
 
 The following packages are used in this project by default.

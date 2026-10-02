@@ -11,17 +11,17 @@ const LEADER_SPACE = 14 + (COLUMNS.length - 1) * ELBOW_STEP;
 const MARGIN = { bottom: 1, left: 34, right: 2 };
 const MIN_SLOT_WIDTH = 100;
 
-// Draws the Marimekko into `svgNode`. Returns nothing; interaction is reported via `onHover`.
-export const drawChart = (svgNode, { animate, onHover, width }) => {
+// Interaction is reported via `onHover`; plot height lets the wrapper fit its chart chrome.
+export const drawChart = (svgNode, { animate, maxPlotHeight = 340, onHover, width }) => {
   const plotW = width - MARGIN.left - MARGIN.right;
   const slotW = plotW / COLUMNS.length;
   const stagger = slotW < MIN_SLOT_WIDTH;
-  const rows = stagger ? 2 : 1;
+  const rows = slotW < 45 ? 3 : stagger ? 2 : 1;
   const LINE_HEIGHT = stagger ? 15 : 17;
   const LABEL_HEIGHT = LINE_HEIGHT * 3;
   const labelArea = rows * LABEL_HEIGHT + (rows - 1) * ROW_GAP;
   const plotTop = labelArea + LEADER_SPACE;
-  const plotH = Math.max(220, Math.min(340, plotW * 0.55));
+  const plotH = Math.min(maxPlotHeight, Math.max(220, Math.min(340, plotW * 0.55)));
   const height = plotTop + plotH + MARGIN.bottom;
 
   const x = scaleLinear().domain([0, 1]).range([0, plotW]);
@@ -51,7 +51,15 @@ export const drawChart = (svgNode, { animate, onHover, width }) => {
     .text(d => (d === 1 ? '100%' : d * 100));
 
   // Columns.
-  const columns = root.append('g').attr('class', 'columns').attr('transform', `translate(0,${plotTop})`).selectAll('g').data(COLUMNS).join('g').attr('class', 'column');
+  const columns = root
+    .append('g')
+    .attr('class', 'columns')
+    .attr('transform', `translate(0,${plotTop})`)
+    .selectAll('g')
+    .data(COLUMNS)
+    .join('g')
+    .attr('class', 'column')
+    .attr('data-column', d => d.key);
 
   const rects = columns
     .selectAll('rect')
@@ -75,6 +83,7 @@ export const drawChart = (svgNode, { animate, onHover, width }) => {
     .text(d => formatPct(d.value));
 
   const setHover = (event, d) => {
+    if (svg.attr('data-active-column')) return;
     rects.classed('dimmed', r => r !== d);
     onHover(d, event);
   };
@@ -116,7 +125,8 @@ export const drawChart = (svgNode, { animate, onHover, width }) => {
     .selectAll('g')
     .data(COLUMNS)
     .join('g')
-    .attr('transform', (_d, i) => `translate(${(i + 0.5) * slotW},${stagger && i % 2 ? LABEL_HEIGHT + ROW_GAP : 0})`);
+    .attr('data-column', d => d.key)
+    .attr('transform', (_d, i) => `translate(${(i + 0.5) * slotW},${(i % rows) * (LABEL_HEIGHT + ROW_GAP)})`);
   labels
     .append('text')
     .attr('class', 'column_label')
@@ -134,11 +144,23 @@ export const drawChart = (svgNode, { animate, onHover, width }) => {
     .selectAll('path')
     .data(COLUMNS)
     .join('path')
+    .attr('data-column', d => d.key)
     .attr('d', (d, i) => {
       const startX = (i + 0.5) * slotW;
-      const startY = (stagger && i % 2 ? LABEL_HEIGHT + ROW_GAP : 0) + LABEL_HEIGHT + 3;
+      const startY = (i % rows) * (LABEL_HEIGHT + ROW_GAP) + LABEL_HEIGHT + 3;
       const elbowY = labelArea + 8 + i * ELBOW_STEP;
       const endX = x((d.x0 + d.x1) / 2);
       return `M${startX},${startY}V${elbowY}H${endX}V${plotTop - 3}`;
     });
+  return { plotHeight: plotH };
+};
+
+// Update emphasis without rebuilding the chart or disturbing keyboard focus.
+export const highlightColumn = (svgNode, key) => {
+  const svg = select(svgNode).attr('data-active-column', key);
+  svg.selectAll('.column rect').classed('dimmed', false);
+  svg
+    .selectAll('[data-column]')
+    .classed('story_muted', d => Boolean(key) && d.key !== key)
+    .classed('story_highlighted', d => d.key === key);
 };
