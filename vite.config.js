@@ -8,16 +8,18 @@ const { name } = require('./package.json');
 
 export default defineConfig(({ command }) => ({
   build: {
+    cssCodeSplit: false,
     emptyOutDir: true,
     minify: 'terser',
     outDir: 'dist',
     rollupOptions: {
       input: {
-        index: './index.html'
+        index: './index.html',
+        'marimekko-focus': './marimekko-focus.html'
       },
       output: {
-        entryFileNames: `js/${name}.min.js`,
-        chunkFileNames: `js/${name}.[name].js`,
+        entryFileNames: chunk => `js/${name}${chunk.name === 'index' ? '' : `.${chunk.name}`}.min.js`,
+        chunkFileNames: `js/${name}.[name]-[hash].js`,
         assetFileNames: assetInfo => {
           if (assetInfo.name?.endsWith('.css')) return `css/${name}.min.css`;
           return `assets/[name][extname]`;

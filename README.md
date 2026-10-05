@@ -29,6 +29,31 @@ application that is embedded within UNCTAD's Drupal platform.
 
 Update the `?v=` query parameter to match the current build version to bust the cache.
 
+### Standalone Chapter I focus chart
+
+The full report remains at `index.html`. Open `marimekko-focus.html` to use the
+AI-server-rack focus chart on its own, with the same five scroll stages,
+responsive layout, tooltips, source, note and CSV download. It omits the report
+header, chapter text, navigation and footer.
+
+Local preview: http://localhost:8080/marimekko-focus.html
+
+```html
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-tdr_report/js/2026-tdr_report.marimekko-focus.min.js?v=1"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-tdr_report/css/2026-tdr_report.min.css?v=1">
+<div class="app-root-2026-tdr_report" id="app-root-2026-tdr_report-marimekko-focus">
+  Loading...
+</div>
+<noscript>Your browser does not support Javascript!</noscript>
+```
+
+Each entry uses a unique root ID, so the standalone chart and report can also
+coexist on one page. Both entries use the same combined stylesheet. Keep the
+outer script and stylesheet `?v=` parameters up to date when deploying.
+Shared JavaScript chunks use content-hashed filenames, following
+`2026-global_trade_update`, so changes automatically bypass Azure/CDN caches
+even though query parameters on an entry script do not propagate to its imports.
+
 ## Used in
 
 * [Trade and Development Report 2026](https://unctad.org/publication/trade-and-development-report-2026)
@@ -51,7 +76,8 @@ For developing please refer to `package.json`.
 ### Deployment
 
 * `npm run build` – production bundle into `dist/` (runs `scripts/postbuild.js` to
-  rewrite absolute asset paths to relative and content-hash the shared chunk).
+  rewrite absolute HTML and CSS asset paths to relative for both entry points).
+  Vite content-hashes all shared JavaScript chunks and their imports.
 * `npm run sync-gh-pages` – push `dist/` to the `gh-pages` branch for the live demo.
 * `npm run sync-prod` – copy the build to Azure blob storage (`storage.unctad.org`).
 
@@ -64,6 +90,7 @@ All source code goes to folder `src`.
 * `src/meta.json` – report title, subtitle, year, chapter list and PDF/overview URLs.
 * `src/Article.mdx` – the full narrative (copy + component placement).
 * `src/jsx/App.jsx` – component registry passed to the MDX, scroll-reveal observer, theme colours.
+* `src/jsx/IndexMarimekkoFocus.jsx` – standalone Chapter I focus-chart entry, reusing the report component.
 * `src/jsx/App.css` – project-specific layout and narrative styles.
 * `src/jsx/components/` – project-specific components (chart wrappers etc.).
 

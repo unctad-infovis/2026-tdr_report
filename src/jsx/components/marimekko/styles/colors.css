@@ -1,5 +1,5 @@
 /* Marimekko-specific colour tokens – only values not covered by --un-color-* */
-#app-root-2026-tdr_report {
+:is(#app-root-2026-tdr_report, #app-root-2026-tdr_report-marimekko-focus) {
   /* Datawrapper UNCTAD theme panel background */
   --chart-bg: #f4f9fd;
 }

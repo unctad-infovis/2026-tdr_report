@@ -7,11 +7,11 @@ import './ChartFocusTrade.css';
 
 const TITLE = 'Trade reaches farther as partner compatibility edges up';
 const STAGES = [
-  { key: 'introduction', headline: 'Is globalization going into reverse?', body: 'This chart tracks two signs. Both start at 100 in 2015.' },
-  { key: 'distance', headline: 'Since 2015, goods have travelled farther between trading partners.', body: "Trade isn't retreating closer to home." },
+  { key: 'introduction', headline: 'Is trade becoming more or less global?', body: 'This chart tracks two measures – distance and compatibility. Both start at 100 in 2015.' },
+  { key: 'distance', headline: 'Since 2015, goods have travelled farther between trading partners.', body: 'In terms of distance, trade is moving farther from home.' },
   { key: 'compatibility', headline: 'We also measured how alike trading partners are.', body: 'We used how they vote at the UN General Assembly as a measure of geoeconomic compatibility.' },
-  { key: 'trend', headline: 'That measure has edged up too.', body: 'More trade now flows between like-minded partners.' },
-  { key: 'conclusion', headline: "Trade reaches farther, but it's becoming more selective.", body: 'For strategically sensitive goods on the Common High-Priority Items List, compatibility rose 28.9% between 2019 and 2024.' }
+  { key: 'trend', headline: 'That measure has edged up, too.', body: 'More trade now flows between like-minded partners.' },
+  { key: 'conclusion', headline: 'Trade reaches farther, but it’s becoming more selective.', body: 'For strategically sensitive goods linked to technology and security, trading-partner compatibility rose 28.9% between 2019 and 2024.' }
 ];
 const SERIES = [
   { key: 'distance', label: 'Geographic distance', column: 1 },

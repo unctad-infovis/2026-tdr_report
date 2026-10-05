@@ -1,6 +1,6 @@
 @import url('./colors.css');
 /* Box figure I.3.2 – mirrors the Datawrapper UNCTAD theme used by the other charts on the page */
-#app-root-2026-tdr_report .app {
+:is(#app-root-2026-tdr_report, #app-root-2026-tdr_report-marimekko-focus) .app {
   figure.container_chart_marimekko {
     box-sizing: border-box;
     margin: 0 auto;
@@ -190,11 +190,11 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  #app-root-2026-tdr_report .app figure.container_chart_marimekko {
+  :is(#app-root-2026-tdr_report, #app-root-2026-tdr_report-marimekko-focus) .app figure.container_chart_marimekko {
     .parallax_container {
       transition: none;
     }
-    .chart_body .column rect {
+    .chart_marimekko .chart_body .column rect {
       transition: none;
     }
   }

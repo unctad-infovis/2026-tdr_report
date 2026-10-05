@@ -8,7 +8,7 @@ const STAGES = [
     key: 'introduction',
     column: null,
     headline: 'Who captures the value of an AI server rack?',
-    body: 'Each column is a type of income. The wider the column, the bigger its share of the value created.'
+    body: 'Each column shows a type of income. The wider the column, the bigger its share of the value created.'
   },
   {
     key: 'production',
@@ -18,8 +18,8 @@ const STAGES = [
   {
     key: 'non-production',
     column: 'non_production_labour',
-    headline: 'Other staff, such as engineers and managers, receive 9.9%.',
-    body: 'All workers together: less than 15%.'
+    headline: 'Other workers, such as engineers and managers, receive 9.9%.',
+    body: 'Together, workers receive less than 15%.'
   },
   {
     key: 'profit',
@@ -31,7 +31,7 @@ const STAGES = [
     key: 'conclusion',
     column: null,
     headline: 'Four supplier groups capture 82% of the value.',
-    body: "Most developing economies capture less than 1%, mainly by supplying raw materials. Taking part in production isn't the same as capturing its value."
+    body: 'Most developing economies capture only a marginal share, mainly through raw materials. Taking part in production isn’t the same as capturing its value.'
   }
 ];
 

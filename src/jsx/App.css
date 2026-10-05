@@ -4,7 +4,7 @@
    `@unctad-infovis/minisite-tools` package and fixed at source for this project); everything
    here is project-specific on top of that. */
 
-#app-root-2026-tdr_report .app {
+:is(#app-root-2026-tdr_report, #app-root-2026-tdr_report-marimekko-focus) .app {
   h3,
   h4,
   p,
