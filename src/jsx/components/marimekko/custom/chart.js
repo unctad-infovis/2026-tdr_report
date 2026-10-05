@@ -138,6 +138,14 @@ export const drawChart = (svgNode, { animate, maxPlotHeight = 340, onHover, widt
     .attr('x', 0)
     .text(d => d.text);
 
+  const labelPositions = [];
+  labels.each(function (_d, i) {
+    const halfWidth = this.querySelector('text').getBBox().width / 2;
+    const labelX = Math.min((i + 0.5) * slotW, plotW - halfWidth);
+    labelPositions.push(labelX);
+    select(this).attr('transform', `translate(${labelX},${(i % rows) * (LABEL_HEIGHT + ROW_GAP)})`);
+  });
+
   root
     .append('g')
     .attr('class', 'leaders')
@@ -146,7 +154,7 @@ export const drawChart = (svgNode, { animate, maxPlotHeight = 340, onHover, widt
     .join('path')
     .attr('data-column', d => d.key)
     .attr('d', (d, i) => {
-      const startX = (i + 0.5) * slotW;
+      const startX = labelPositions[i];
       const startY = (i % rows) * (LABEL_HEIGHT + ROW_GAP) + LABEL_HEIGHT + 3;
       const elbowY = labelArea + 8 + i * ELBOW_STEP;
       const endX = x((d.x0 + d.x1) / 2);

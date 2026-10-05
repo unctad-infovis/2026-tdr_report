@@ -9,7 +9,7 @@ import './styles/styles.css';
 const TITLE = 'After-tax profit takes 68% of the value traced in an AI server rack';
 const DESCRIPTION = 'Traced value added in producing one advanced AI server rack by income type and supplier group, percentage';
 const NOTE = 'Column widths show the share of each income type in total traced value added. Heights show the composition by supplier group.';
-const SOURCE = 'UN Trade and Development (UNCTAD).';
+const SOURCE = 'UN Trade and Development (UNCTAD)';
 
 const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -81,7 +81,7 @@ const ChartMarimekko = ({ activeColumn = null, scrollStory = false }) => {
     });
     if (scrollStory) {
       const chromeHeight = chartRef.current.closest('.chart_marimekko').getBoundingClientRect().height - plotHeight;
-      setPlotHeightBudget(Math.max(40, Math.min(340, Math.floor(viewportHeight - chromeHeight - 32))));
+      setPlotHeightBudget(Math.max(140, Math.min(340, Math.floor(viewportHeight - chromeHeight - 32))));
     }
     highlightColumn(svgRef.current, activeColumnRef.current);
     setTooltip(null);

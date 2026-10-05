@@ -173,6 +173,7 @@
     }
   }
   .chart_marimekko_meta {
+    color: #000;
     display: flex;
     flex-direction: column;
     font-size: var(--un-font-size-xxxs);

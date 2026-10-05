@@ -1,0 +1,97 @@
+#app-root-2026-tdr_report .app {
+  .investment_focus_story {
+    .investment_chart {
+      .trade_legend li span {
+        height: 14px;
+        width: 14px;
+      }
+      .investment_plot {
+        display: block;
+        .strategic_band {
+          opacity: 1;
+          transition: opacity 400ms;
+          rect {
+            fill: var(--un-color-grey-lightest);
+          }
+          text {
+            fill: var(--un-color-grey-darkest);
+            font-size: var(--un-font-size-xxxs);
+            font-weight: var(--un-font-weight-bold);
+          }
+          &:where(.hidden) {
+            opacity: 0;
+          }
+          @media print {
+            opacity: 1;
+            transition: none;
+          }
+          @media (prefers-reduced-motion: reduce) {
+            transition: none;
+          }
+        }
+        .investment_grid {
+          line {
+            stroke: var(--un-color-grey);
+            stroke-dasharray: 1 3;
+          }
+          text {
+            fill: var(--un-color-grey-dark);
+            font-size: var(--un-font-size-xxs);
+          }
+        }
+        .investment_sector {
+          opacity: 1;
+          transition: opacity 400ms;
+          &:where(.hidden) {
+            opacity: 0;
+          }
+          @media print {
+            opacity: 1;
+            transition: none;
+          }
+          @media (prefers-reduced-motion: reduce) {
+            transition: none;
+          }
+          .sector_label {
+            fill: var(--un-color-grey-darkest);
+            font-size: var(--un-font-size-xxs);
+            @media (max-width: 500px) {
+              font-size: var(--un-font-size-xxxs);
+            }
+          }
+          &.current .sector_label {
+            fill: #000;
+            font-weight: var(--un-font-weight-bold);
+          }
+          .investment_bar {
+            rect {
+              fill: var(--un-color-blue);
+              transform: scaleX(var(--bar-scale));
+              transform-box: fill-box;
+              transform-origin: left center;
+              transition: transform 700ms;
+              @media print {
+                transform: scaleX(1);
+                transition: none;
+              }
+              @media (prefers-reduced-motion: reduce) {
+                transition: none;
+              }
+            }
+            text {
+              fill: #000;
+              font-size: var(--un-font-size-xxs);
+              font-weight: var(--un-font-weight-bold);
+              @media (max-width: 500px) {
+                font-size: var(--un-font-size-xxxs);
+              }
+            }
+            &.developing rect {
+              fill: var(--un-color-yellow);
+            }
+          }
+        }
+      }
+    }
+  }
+}

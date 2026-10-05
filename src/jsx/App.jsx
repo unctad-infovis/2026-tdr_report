@@ -9,10 +9,12 @@ import { useEffect, useRef } from 'react';
 
 import Article from '../Article.mdx';
 
+import ChartFocusInvestment from './components/investment/ChartFocusInvestment.jsx';
 import ChartMarimekkoStory from './components/marimekko/ChartMarimekkoStory.jsx';
 import Footer from './components/minisite/Footer.jsx';
 import Header from './components/minisite/Header.jsx';
 import HeaderChapter from './components/minisite/HeaderChapter.jsx';
+import ChartFocusTrade from './components/trade/ChartFocusTrade.jsx';
 
 import '@unctad-infovis/general-tools/styles/styles.css';
 import './App.css';
@@ -21,6 +23,8 @@ import './components/minisite/minisite.css';
 const components = {
   BackToTop,
   ChartDataWrapper,
+  ChartFocusTrade,
+  ChartFocusInvestment,
   ChartMarimekkoStory,
   Footer,
   Header,

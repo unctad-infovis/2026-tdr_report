@@ -3,7 +3,7 @@
 // Column widths use the published rounded shares (raw: 4.248, 3.510, 9.915, 1.887, 12.413, 68.027) so they sum to 100%.
 
 export const SUPPLIERS = [
-  { color: 'var(--un-color-blue)', key: 'fabless', label: 'Fabless company', textColor: '#fff' },
+  { color: 'var(--un-color-blue)', key: 'fabless', label: 'Chip designer', textColor: '#fff' },
   { color: 'var(--un-color-yellow)', key: 'memory', label: 'Memory suppliers', textColor: '#000' },
   { color: 'var(--un-color-blue-darkest)', key: 'foundry', label: 'Foundry', textColor: '#fff' },
   { color: 'var(--un-color-yellow-darkest)', key: 'assemblers', label: 'Assemblers', textColor: '#fff' },
@@ -49,15 +49,15 @@ const RAW = [
   {
     key: 'post_tax_profit',
     share: 0.68,
-    label: 'Post-tax profit',
-    lines: ['Post-tax', 'profit'],
+    label: 'After-tax profit',
+    lines: ['After-tax', 'profit'],
     values: { assemblers: 59024.47704331107, fabless: 1660273.5059823466, foundry: 88688.13643423913, memory: 122415.7056069902, others: 50695.737997161814 }
   }
 ];
 
 const grandTotal = RAW.reduce((sum, col) => sum + SUPPLIERS.reduce((s, sup) => s + col.values[sup.key], 0), 0);
 
-// Columns with cumulative x0/x1 (0–1) and stacked segments y0/y1 (0–1, Fabless at the bottom).
+// Columns with cumulative x0/x1 (0–1) and stacked segments y0/y1 (0–1, chip designer at the bottom).
 export const COLUMNS = (() => {
   let x = 0;
   return RAW.map(col => {
