@@ -59,12 +59,13 @@
         position: relative;
         width: 100%;
         > h3 {
-          align-items: flex-end;
+          align-items: flex-start;
           color: #fff;
           display: flex;
+          flex-direction: column;
           font-size: clamp(var(--un-font-size-xxxl), 5vw, var(--un-font-size-xxxxl));
           font-weight: var(--un-font-weight-bolder);
-          gap: 24px;
+          gap: 12px;
           line-height: var(--un-line-height-smallest);
           margin: 0 0 20px;
           max-width: var(--un-column-width);
@@ -231,12 +232,12 @@
   }
   #app-root-2026-tdr_report .app div.container_header_wrapper .container_header .header_bottom .container_chapters_navigation button .chapter_navigation .chapter_title {
     flex: 1;
+    min-height: 0;
     order: 2;
     padding: 5px;
   }
   #app-root-2026-tdr_report .app div.container_header_wrapper .container_header .header_bottom .container_chapters_navigation button .chapter_navigation .chapter_image {
-    flex: 0 0 96px;
-    order: 3;
+    display: none;
   }
   #app-root-2026-tdr_report .app div.container_header_wrapper .container_header .header_bottom .container_chapters_navigation button + button {
     margin-top: 2px;

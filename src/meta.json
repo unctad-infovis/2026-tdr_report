@@ -1,19 +1,22 @@
 {
   "chapters": [
     {
-      "image_url": "assets/img/2026-tdr_report_chapter1_orig.jpg?v=1",
+      "card_image_url": "assets/img/2026-tdr_report_chapter1_square.webp?v=1",
+      "image_url": "assets/img/2026-tdr_report_chapter1_banner.webp?v=1",
       "pdf_url": "",
       "subtitle": "Three pressures on resilient growth",
       "title": "Resilience and its limits"
     },
     {
-      "image_url": "assets/img/2026-tdr_report_chapter2_orig.jpg?v=1",
+      "card_image_url": "assets/img/2026-tdr_report_chapter2_square.webp?v=1",
+      "image_url": "assets/img/2026-tdr_report_chapter2_banner.webp?v=1",
       "pdf_url": "",
       "subtitle": "The new geography of trade",
-      "title": "Selective fragmentation"
+      "title": "Selective fragmentation: The new geography of trade"
     },
     {
-      "image_url": "assets/img/2026-tdr_report_chapter3_orig.jpg?v=1",
+      "card_image_url": "assets/img/2026-tdr_report_chapter3_square.webp?v=1",
+      "image_url": "assets/img/2026-tdr_report_chapter3_banner.webp?v=1",
       "pdf_url": "",
       "subtitle": "Industrialization and export growth helped parts of Asia catch up, but strategic-sector competition is making that path harder to follow",
       "title": "Development in the age of geoeconomics"

@@ -81,6 +81,9 @@
       gap: 24px;
       margin-bottom: 24px;
     }
+    > .two_column:has(> .container_chart_data_wrapper) {
+      margin-block: 48px;
+    }
     > .two_column > figure {
       flex: 1 1 0;
       margin: 0;
@@ -89,6 +92,7 @@
       padding: 0;
     }
     > .container_chart_data_wrapper {
+      margin: 48px auto;
       max-width: var(--un-column-width);
       padding: 0;
     }
@@ -230,7 +234,7 @@
       width: min(var(--un-column-width), calc(100vw - 32px));
       .text {
         color: #fff;
-        font-size: clamp(var(--un-font-size-xxl), 7vw, 68px);
+        font-size: clamp(var(--un-font-size-xxl), 7vw, 66px);
         font-weight: var(--un-font-weight-bolder);
         line-height: 1.1;
         max-width: var(--un-column-width);

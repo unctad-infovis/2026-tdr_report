@@ -8,7 +8,8 @@ import './styles/styles.css';
 
 const TITLE = 'After-tax profit takes 68% of the value traced in an AI server rack';
 const DESCRIPTION = 'Traced value added in producing one advanced AI server rack by income type and supplier group, percentage';
-const NOTE = 'Column widths show the share of each income type in total traced value added. Heights show the composition by supplier group.';
+const NOTE =
+  'Traced value added represents more than 87 per cent of the total value added (i.e. $3.3 million) of an NVIDIA GB200 NVL72 server rack. Component width is proportional to its share of traced value added, while vertical segments show the distribution of each component across supplier groups. “Others” combines rack hardware, thermal, power delivery and board electronics.';
 const SOURCE = 'UN Trade and Development (UNCTAD)';
 
 const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
