@@ -27,6 +27,8 @@
         box-sizing: border-box;
         margin-bottom: 100px;
         padding: 10px 0;
+        position: relative;
+        z-index: 1;
         > h2 {
           color: #fff;
           font-size: var(--un-font-size-xxxl);
