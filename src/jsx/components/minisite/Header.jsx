@@ -4,7 +4,13 @@ import ButtonShare from '@unctad-infovis/general-tools/components/ButtonShare.js
 import './Header.css';
 
 function Header({ bg_image_url, chapters, full_report_url, overview_url, subtitle, title, year }) {
-  const scrollTo = selector => window.appRef.current.querySelector(selector)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const scrollTo = selector => {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.appRef.current.querySelector(selector)?.scrollIntoView({
+      behavior: reduceMotion ? 'auto' : 'smooth',
+      block: 'start'
+    });
+  };
   return (
     <div className="container_header_wrapper" style={{ backgroundImage: `url(${bg_image_url})` }}>
       <div className="container_header">
@@ -30,7 +36,7 @@ function Header({ bg_image_url, chapters, full_report_url, overview_url, subtitl
           <div className="container_chapters_navigation">
             {chapters.map((chapter, i) => (
               <button onClick={() => scrollTo(`.container_chapter_${i + 1}`)} type="button" key={chapter.title}>
-                <div className="chapter_navigation">
+                <div className={`chapter_navigation chapter_navigation_${i + 1}`}>
                   <div className="chapter_title">
                     <h3>{chapter.title}</h3>
                   </div>
@@ -38,7 +44,7 @@ function Header({ bg_image_url, chapters, full_report_url, overview_url, subtitl
                     <div style={{ backgroundImage: `url(${chapter.image_url})` }} />
                   </div>
                   <div className="chapter_meta">
-                    <div className="chapter_number">{i + 1}.</div>
+                    <div className="chapter_number">{i + 1}</div>
                     {chapter.pdf_url && (
                       <a href={chapter.pdf_url} target="_blank" className="chapter_download_button" aria-label="Download chapter" rel="noreferrer">
                         Download chapter
