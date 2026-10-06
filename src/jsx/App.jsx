@@ -46,10 +46,8 @@ const App = ({ meta }) => {
       style={{
         '--main-color': 'var(--un-color-red-dark)',
         '--secondary-color': 'var(--un-color-red-darkest)',
-        '--ms-column': '920px',
-        '--ms-theme-text': 'var(--un-color-red-text-dark)',
-        '--ms-cta': 'var(--un-color-yellow)',
-        '--ms-card-ratio': '1 / 1'
+        '--un-column-width': '920px',
+        '--un-chapter-card-ratio': '1 / 1'
       }}
       ref={appRef}
     >

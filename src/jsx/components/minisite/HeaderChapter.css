@@ -1,7 +1,11 @@
+html {
+  timeline-scope: --chapter-image-pan;
+}
+
 #app-root-2026-tdr_report .app {
   div.container_chapter_header {
     margin: 0 auto 24px;
-    max-width: var(--ms-column);
+    max-width: var(--un-column-width);
     width: 100%;
     h3 {
       color: #231f20;
@@ -25,25 +29,50 @@
       padding: 0;
       p {
         margin: 0 0 10px;
-        max-width: var(--ms-column);
+        max-width: var(--un-column-width);
         width: 100%;
       }
     }
     figure.image {
       aspect-ratio: 2.4 / 1;
       margin: 0;
-      max-width: var(--ms-column);
+      max-width: var(--un-column-width);
       overflow: hidden;
       padding: 0;
+      view-timeline-name: --chapter-image-pan;
       img {
         display: block;
         height: 100%;
         object-fit: cover;
+        transform: scale(1.3);
         width: 100%;
       }
       @media (max-width: 700px) {
         aspect-ratio: 16 / 9;
       }
     }
+  }
+}
+
+@supports (animation-timeline: view()) {
+  #app-root-2026-tdr_report .app div.container_chapter_header figure.image img {
+    animation: chapter-image-pan linear both;
+    animation-range: entry 0% exit 100%;
+    animation-timeline: --chapter-image-pan;
+  }
+}
+
+@keyframes chapter-image-pan {
+  from {
+    transform: scale(1.3) translateY(-8%);
+  }
+  to {
+    transform: scale(1.3) translateY(8%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #app-root-2026-tdr_report .app div.container_chapter_header figure.image img {
+    animation: none;
   }
 }

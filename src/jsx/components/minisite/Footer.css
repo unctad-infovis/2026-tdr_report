@@ -5,10 +5,10 @@
     padding: clamp(40px, 5vw, 64px) 16px;
     .footer_download {
       margin: 0 auto 40px;
-      max-width: var(--ms-column);
+      max-width: var(--un-column-width);
       text-align: left;
       a {
-        background-color: var(--ms-cta);
+        background-color: var(--un-color-yellow);
         border: 0;
         border-radius: 20px;
         color: #000;
@@ -33,16 +33,16 @@
       letter-spacing: 0;
       line-height: var(--un-line-height-small);
       margin: 0 auto 32px;
-      max-width: var(--ms-column);
+      max-width: var(--un-column-width);
       text-align: left;
       text-transform: none;
     }
     .footer_elements {
       display: block;
       margin: 0 auto;
-      max-width: var(--ms-column);
+      max-width: var(--un-column-width);
       .footer_element {
-        max-width: var(--ms-column);
+        max-width: var(--un-column-width);
         width: 100%;
         .footer_content {
           background: none;
