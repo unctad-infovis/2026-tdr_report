@@ -185,6 +185,7 @@
                 .chapter_download_button {
                   color: #fff;
                   font-size: 0;
+                  line-height: 0;
                   margin-top: -4px;
                   &:before {
                     background-image: url('./icons/icon_download_white.png');
