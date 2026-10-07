@@ -70,9 +70,13 @@
           gap: 12px;
           line-height: var(--un-line-height-smallest);
           margin: 0 0 20px;
-          max-width: var(--un-column-width);
+          max-width: 920px;
           padding: 0;
           text-shadow: none;
+          text-wrap: balance;
+          > div {
+            max-width: 10em;
+          }
           @media (max-width: 700px) {
             align-items: flex-start;
             flex-direction: column;
