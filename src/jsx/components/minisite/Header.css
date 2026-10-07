@@ -4,6 +4,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     margin: auto;
+    --un-column-width: 1350px;
     position: relative;
     z-index: 2;
     &::before {
@@ -22,6 +23,7 @@
       margin: auto;
       max-width: var(--un-column-width);
       min-height: 50vh;
+      padding-inline: clamp(16px, 4vw, 48px);
       width: 100%;
       .header_top {
         box-sizing: border-box;
