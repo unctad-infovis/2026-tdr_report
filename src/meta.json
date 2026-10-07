@@ -29,5 +29,47 @@
   "subtitle": "The geoeconomics of development",
   "title": "Trade and Development Report",
   "year": "2026",
-  "url": "https://unctad.org/publication/trade-and-development-report-2026"
+  "url": "https://unctad.org/publication/trade-and-development-report-2026",
+  "footer": {
+    "language_links": [
+      {
+        "label": "Français",
+        "url": ""
+      },
+      {
+        "label": "Español",
+        "url": ""
+      },
+      {
+        "label": "العربية",
+        "url": ""
+      },
+      {
+        "label": "简体中文",
+        "url": ""
+      },
+      {
+        "label": "Русский",
+        "url": ""
+      },
+      {
+        "label": "Português",
+        "url": ""
+      }
+    ],
+    "launch_event_title": "Trade and Development Report 2026 – Press conference",
+    "launch_event_url": "",
+    "media_links": [
+      {
+        "label": "Photos",
+        "url": ""
+      },
+      {
+        "label": "Digital assets",
+        "url": ""
+      }
+    ],
+    "video_title": "Trade and Development Report 2026",
+    "video_url": "https://player.vimeo.com/video/1233617256"
+  }
 }
