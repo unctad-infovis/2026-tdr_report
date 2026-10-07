@@ -7,8 +7,8 @@ const STAGES = [
   {
     key: 'introduction',
     column: null,
-    headline: 'Who captures the value of an AI server rack?',
-    body: 'Each column shows a type of income. The wider the column, the bigger its share of the value created.'
+    headline: 'Who captures the value of an AI advanced server rack?',
+    body: 'Each column shows a component. The wider the column, the bigger its share of the value created.'
   },
   {
     key: 'production',
@@ -35,6 +35,6 @@ const STAGES = [
   }
 ];
 
-const ChartMarimekkoStory = () => <FocusChartStory label="How value added is distributed in an AI server rack" stages={STAGES} renderChart={step => <ChartMarimekko activeColumn={STAGES[step].column} scrollStory />} />;
+const ChartMarimekkoStory = () => <FocusChartStory label="How value added is distributed in an AI advanced server rack" stages={STAGES} renderChart={step => <ChartMarimekko activeColumn={STAGES[step].column} scrollStory />} />;
 
 export default ChartMarimekkoStory;

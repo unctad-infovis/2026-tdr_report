@@ -11,7 +11,7 @@ const STAGES = [
   { key: 'baseline', headline: 'In most industries, new investment projects are split almost evenly.', body: '49% goes to developed economies, 51% to developing ones.' },
   { key: 'strategic', headline: 'But in the industries governments now see as strategic, the picture changes.' },
   { key: 'technology', headline: 'In semiconductors and advanced technologies, developed economies attract almost four fifths of foreign investment.' },
-  { key: 'ai-energy', headline: 'They also get most of it in AI infrastructure and clean energy technology.' },
+  { key: 'ai-energy', headline: 'They also get most of it in AI development and infrastructure, and in clean energy technology.' },
   { key: 'minerals', headline: 'Developing economies lead in only one: critical minerals.' },
   { key: 'conclusion', headline: 'But extracting critical minerals isn’t the same as capturing their value.' }
 ];

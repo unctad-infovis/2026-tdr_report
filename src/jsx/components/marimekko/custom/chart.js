@@ -9,7 +9,7 @@ const ROW_GAP = 10;
 const ELBOW_STEP = 6;
 const LEADER_SPACE = 14 + (COLUMNS.length - 1) * ELBOW_STEP;
 const MARGIN = { bottom: 1, left: 34, right: 2 };
-const MIN_SLOT_WIDTH = 100;
+const MIN_SLOT_WIDTH = 120;
 
 // Interaction is reported via `onHover`; plot height lets the wrapper fit its chart chrome.
 export const drawChart = (svgNode, { animate, maxPlotHeight = 340, onHover, width }) => {

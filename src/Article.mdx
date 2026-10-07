@@ -6,9 +6,6 @@
   copy, React components (passed in from App.jsx via `components`) for the
   interactive / layout pieces. `props.meta` is `src/meta.json`.
 
-  Chart ids below are temporary placeholders named after the source document's
-  figure numbers (e.g. PLACEHOLDER_I2 = report figure I.2). Replace each
-  `chart_id` with the real Datawrapper chart id once it is published.
   ============================================================================
 */}
 
@@ -27,15 +24,15 @@
  *********************************************/}
 
 <div className="container_chapter">
-  #### Global trade hit a record $35 trillion in 2025 despite conflicts, tariffs and an energy shock. But that resilience is fragile and uneven. Growth is slowing, financial risks are rising and development finance is under pressure.
+  #### Global trade surpassed $35 trillion for the first time in 2025 despite conflicts and rising trade restrictions, and is expected to remain resilient in 2026, even as a major energy shock adds to these pressures. But that resilience is fragile and uneven. Growth is slowing, financial risks are mounting and development finance is under strain.
 
-  The rules of the game are changing. Governments are using trade restrictions, subsidies and technology controls to compete for industries they see as vital to economic and national security, including semiconductors, artificial intelligence infrastructure and clean energy technologies.
+  The rules of the game are changing. Governments are using trade restrictions, financial subsidies and technology controls to compete for industries they see as vital to economic and national security, including semiconductors, artificial intelligence infrastructure and clean energy technologies.
 
   The report calls this <strong>geoeconomics</strong> – the use of economic tools to pursue strategic goals – and it's redrawing the global trade and investment map. Trade remains global, but access is becoming more selective.
 
   Apart from a handful of Asian economies, most of the global South is falling further behind. A country can attract investment, supply critical minerals or assemble goods for export and still capture little of the value created, as foreign firms often control the most profitable stages of production.
 
-  Yet the changing map of production also creates openings. As companies shift operations, some emerging economies are attracting new trade and investment. Their rise is also widening markets for others.
+  Yet the changing map of production also creates openings. As companies shift operations, some developing economies are attracting new trade and investment. Their rise is also widening markets for others.
 
   The question is whether developing economies can turn these openings into stronger industries and lasting growth.
 
@@ -116,7 +113,7 @@
 
     Its gains are highly concentrated, too.
 
-    {/* BOX FIGURE I.3.2 – After-tax profit takes 68% of the value traced in an AI server rack. Traced value added in producing one advanced AI server rack by income type and supplier group, percentage. Column widths show income shares. */}
+    {/* BOX FIGURE I.3.2 – After-tax profit takes 68% of the value traced in an AI advanced server rack. Traced value added in producing one AI advanced server rack by component and supplier group, percentage. Column widths show component shares. */}
     <ChartMarimekkoStory />
 
     <strong>Less aid, less room to respond.</strong> Development aid is shrinking as financial volatility rises. Aid is projected to fall 6.9% in 2026, its third consecutive annual decline, and has shifted away from developing regions since 2022.
@@ -168,7 +165,7 @@
 
     **Trade remains global, but access is becoming more selective. Policy increasingly shapes partner choices.**
 
-    Since 2015, goods have travelled farther between trading partners. Those partners have also become more alike in how they vote at the UN General Assembly – the report's measure of "geoeconomic compatibility".
+    Since 2015, goods have travelled farther between trading partners, showing that companies still source what they need from suppliers far from home where cost and scale make sense. But since 2021, a growing share of global trade is taking place between geoeconomically compatible countries as geoeconomic risk and policy uncertainty weigh more heavily on sourcing decisions.
 
     {/* FIGURE II.9 – Trade reaches farther as partner compatibility edges up. Global goods trade by average distance and the Geoeconomic Compatibility Index, index: 2015=100, 2015–2025. */}
     <ChartFocusTrade />
@@ -290,5 +287,6 @@
 <Footer
   launchEventTitle="Trade and Development Report 2026 – Press conference"
   reportUrl={props.meta.full_report_url}
+  videoUrl="https://player.vimeo.com/video/1233617256"
   videoTitle="Trade and Development Report 2026"
 />

@@ -31,7 +31,7 @@ function Footer({ videoUrl = 'https://player.vimeo.com/video/000000000', videoTi
               <iframe allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" frameBorder="0" src={videoUrl} title={videoTitle} />
             </div>
             {languageLinks.length > 0 && (
-              <ul className="language_links">
+              <ul className="language_links hidden">
                 <li>
                   {languageLinks.map((link, i) => (
                     <span key={link.label}>
@@ -44,11 +44,13 @@ function Footer({ videoUrl = 'https://player.vimeo.com/video/000000000', videoTi
                 </li>
               </ul>
             )}
-            <h4>Watch the launch event</h4>
-            <div className="iframe_container iframe_16_9">
-              <iframe allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" frameBorder="0" src={launchEventUrl} title={launchEventTitle} />
+            <div className="hidden">
+              <h4>Watch the launch event</h4>
+              <div className="iframe_container iframe_16_9">
+                <iframe allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" frameBorder="0" src={launchEventUrl} title={launchEventTitle} />
+              </div>
+              <p>{launchEventTitle}</p>
             </div>
-            <p>{launchEventTitle}</p>
             {mediaLinks.length > 0 && (
               <div>
                 <h4>Media assets</h4>

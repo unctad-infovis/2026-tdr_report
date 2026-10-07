@@ -29,6 +29,12 @@ application that is embedded within UNCTAD's Drupal platform.
 
 Update the `?v=` query parameter to match the current build version to bust the cache.
 
+### Entry points
+
+* `index.html` – the complete report minisite.
+* `marimekko-focus.html` – the AI-server-rack chart with its scroll-driven explanation.
+* `marimekko-chart.html` – the interactive AI-server-rack chart only, for embedding without the story.
+
 ### Standalone Chapter I focus chart
 
 The full report remains at `index.html`. Open `marimekko-focus.html` to use the
@@ -47,8 +53,25 @@ Local preview: http://localhost:8080/marimekko-focus.html
 <noscript>Your browser does not support Javascript!</noscript>
 ```
 
+### Standalone interactive chart
+
+Open `marimekko-chart.html` to show only the interactive AI-server-rack
+Marimekko chart, without the scrolling narrative or focus-chart progression.
+It includes the chart title, legend, tooltips, source, note and CSV download.
+
+Local preview: http://localhost:8080/marimekko-chart.html
+
+```html
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-tdr_report/js/2026-tdr_report.marimekko-chart.min.js?v=1"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-tdr_report/css/2026-tdr_report.min.css?v=1">
+<div class="app-root-2026-tdr_report" id="app-root-2026-tdr_report-marimekko-chart">
+  Loading...
+</div>
+<noscript>Your browser does not support Javascript!</noscript>
+```
+
 Each entry uses a unique root ID, so the standalone chart and report can also
-coexist on one page. Both entries use the same combined stylesheet. Keep the
+coexist on one page. All entries use the same combined stylesheet. Keep the
 outer script and stylesheet `?v=` parameters up to date when deploying.
 Shared JavaScript chunks use content-hashed filenames, following
 `2026-global_trade_update`, so changes automatically bypass Azure/CDN caches
@@ -90,7 +113,8 @@ All source code goes to folder `src`.
 * `src/meta.json` – report title, subtitle, year, chapter list and PDF/overview URLs.
 * `src/Article.mdx` – the full narrative (copy + component placement).
 * `src/jsx/App.jsx` – component registry passed to the MDX, scroll-reveal observer, theme colours.
-* `src/jsx/IndexMarimekkoFocus.jsx` – standalone Chapter I focus-chart entry, reusing the report component.
+* `src/jsx/IndexMarimekkoFocus.jsx` – standalone Chapter I scroll-story entry.
+* `src/jsx/IndexMarimekkoChart.jsx` – standalone interactive chart entry, without the scroll story.
 * `src/jsx/App.css` – project-specific layout and narrative styles.
 * `src/jsx/components/` – project-specific components (chart wrappers etc.).
 

@@ -15,7 +15,8 @@ export default defineConfig(({ command }) => ({
     rollupOptions: {
       input: {
         index: './index.html',
-        'marimekko-focus': './marimekko-focus.html'
+        'marimekko-focus': './marimekko-focus.html',
+        'marimekko-chart': './marimekko-chart.html'
       },
       output: {
         entryFileNames: chunk => `js/${name}${chunk.name === 'index' ? '' : `.${chunk.name}`}.min.js`,

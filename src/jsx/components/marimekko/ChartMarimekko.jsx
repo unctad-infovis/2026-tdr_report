@@ -6,10 +6,10 @@ import { CSV, SUPPLIERS } from './custom/data.js';
 
 import './styles/styles.css';
 
-const TITLE = 'After-tax profit takes 68% of the value traced in an AI server rack';
-const DESCRIPTION = 'Traced value added in producing one advanced AI server rack by income type and supplier group, percentage';
+const TITLE = 'After-tax profit takes 68% of the value traced in an AI advanced server rack';
+const DESCRIPTION = 'Traced value added in producing one AI advanced server rack by component and supplier group, percentage';
 const NOTE =
-  'Traced value added represents more than 87 per cent of the total value added (i.e. $3.3 million) of an NVIDIA GB200 NVL72 server rack. Component width is proportional to its share of traced value added, while vertical segments show the distribution of each component across supplier groups. “Others” combines rack hardware, thermal, power delivery and board electronics.';
+  'Traced value added represents more than 87 per cent of the total value added (i.e. about $3.3 million) of an NVIDIA GB200 NVL72 server rack. Component width is proportional to its share of traced value added, while vertical segments show the distribution of each component across supplier groups. “Others” combines rack hardware, thermal, power delivery and board electronics.';
 const SOURCE = 'UN Trade and Development (UNCTAD)';
 
 const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -98,7 +98,7 @@ const ChartMarimekko = ({ activeColumn = null, scrollStory = false }) => {
             </svg>
             <h3>{TITLE}</h3>
           </div>
-          <p className="chart_description">{scrollStory ? 'Share of traced value added by income type and supplier group, percentage' : DESCRIPTION}</p>
+          <p className="chart_description">{scrollStory ? 'Share of traced value added by component and supplier group, percentage' : DESCRIPTION}</p>
           <ul className="chart_legend">
             {SUPPLIERS.map(s => (
               <li key={s.key}>

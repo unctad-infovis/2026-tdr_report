@@ -7,11 +7,26 @@ import './ChartFocusTrade.css';
 
 const TITLE = 'Trade reaches farther as partner compatibility edges up';
 const STAGES = [
-  { key: 'introduction', headline: 'Is trade becoming more or less global?', body: 'This chart tracks two measures – distance and compatibility. Both start at 100 in 2015.' },
-  { key: 'distance', headline: 'Since 2015, goods have travelled farther between trading partners.', body: 'In terms of distance, trade is moving farther from home.' },
-  { key: 'compatibility', headline: 'We also measured how alike trading partners are.', body: 'We used how they vote at the UN General Assembly as a measure of geoeconomic compatibility.' },
-  { key: 'trend', headline: 'That measure has edged up, too.', body: 'More trade now flows between like-minded partners.' },
-  { key: 'conclusion', headline: 'Trade reaches farther, but it’s becoming more selective.', body: 'For strategically sensitive goods linked to technology and security, trading-partner compatibility rose 28.9% between 2019 and 2024.' }
+  {
+    key: 'introduction',
+    headline: 'Is trade becoming more or less global?',
+    body: 'This chart tracks two dimensions of global goods trade: the geographic distance between trading partners and their geoeconomic compatibility.'
+  },
+  {
+    key: 'distance',
+    headline: 'Since 2015, goods have travelled farther between trading partners.',
+    body: 'Companies still source from suppliers farther from home as cost advantages remain high.'
+  },
+  {
+    key: 'compatibility',
+    headline: 'And since 2021, trade has shifted toward more geoeconomically compatible partners.',
+    body: 'Geoeconomic risk and policy uncertainty are playing a larger role in sourcing decisions.'
+  },
+  {
+    key: 'conclusion',
+    headline: 'Trade reaches farther, but it’s becoming more geoeconomically sensitive.',
+    body: 'Geoeconomic factors are stronger for high-tech and strategic goods, and weaker for low-tech goods.'
+  }
 ];
 const SERIES = [
   { key: 'distance', label: 'Geographic distance', column: 1 },
@@ -49,7 +64,7 @@ const TradeChart = ({ step }) => {
   const y = scaleLinear()
     .domain([99, 103])
     .range([height - 32, 14]);
-  const state = reducedMotion ? 4 : step;
+  const state = reducedMotion ? 3 : step;
   const ticks = chartWidth < 400 ? [2015, 2020, 2025] : [2015, 2017, 2019, 2021, 2023, 2025];
   const selectedRow = selectedYear === null || state === 0 ? null : DATA[selectedYear - 2015];
   const tooltipSeries = selectedRow ? SERIES.filter(series => series.key === 'distance' || (state >= 2 && (state !== 2 || selectedYear <= 2018))) : [];
@@ -128,11 +143,11 @@ const TradeChart = ({ step }) => {
             const earlyShare = lengths.slice(0, 3).reduce((sum, length) => sum + length, 0) / lengths.reduce((sum, length) => sum + length, 0);
             const offset = series.key === 'distance' ? (state < 1 ? 1 : 0) : state < 2 ? 1 : state === 2 ? 1 - earlyShare : 0;
             const visible = series.key === 'distance' ? state >= 1 : state >= 2;
-            const muted = series.key === 'distance' && (state === 2 || state === 3);
+            const muted = series.key === 'distance' && state === 2;
             return (
               <g key={series.key} className={`trade_series ${series.key}${visible ? '' : ' hidden'}${muted ? ' muted' : ''}`}>
                 <path className="trade_line" d={fullPath} pathLength="1" style={{ '--line-offset': offset }} />
-                <text className={`trade_endpoint${state === 4 ? '' : ' hidden'}`} x={plotRight + 8} y={y(DATA[10][series.column]) + (series.key === 'distance' ? -2 : 10)}>
+                <text className={`trade_endpoint${state === 3 ? '' : ' hidden'}`} x={plotRight + 8} y={y(DATA[10][series.column]) + (series.key === 'distance' ? -2 : 10)}>
                   {DATA[10][series.column].toFixed(1)}
                 </text>
               </g>

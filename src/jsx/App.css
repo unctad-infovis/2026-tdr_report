@@ -2,7 +2,7 @@
  * The shared minisite package provides the base chapter and takeaway frame.
  * Project overrides below set the TDR column, typography and red theme.
  */
-:is(#app-root-2026-tdr_report, #app-root-2026-tdr_report-marimekko-focus) .app {
+:is(#app-root-2026-tdr_report, #app-root-2026-tdr_report-marimekko-focus, #app-root-2026-tdr_report-marimekko-chart) .app {
   h3,
   h4,
   p,
@@ -61,7 +61,7 @@
       line-height: 1.6;
     }
     > h4 {
-      color: var(--un-color-grey-darkest);
+      color: #000;
       font-size: clamp(var(--un-font-size-xl), 2.1vw, var(--un-font-size-xxl));
       font-weight: var(--un-font-weight-bold);
       line-height: 1.3;
@@ -276,7 +276,7 @@
 }
 
 @media (max-width: 768px) {
-  :is(#app-root-2026-tdr_report, #app-root-2026-tdr_report-marimekko-focus) .app {
+  :is(#app-root-2026-tdr_report, #app-root-2026-tdr_report-marimekko-focus, #app-root-2026-tdr_report-marimekko-chart) .app {
     .container_chapter {
       padding: 32px 16px;
       > .two_column {
@@ -294,7 +294,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  :is(#app-root-2026-tdr_report, #app-root-2026-tdr_report-marimekko-focus) .app {
+  :is(#app-root-2026-tdr_report, #app-root-2026-tdr_report-marimekko-focus, #app-root-2026-tdr_report-marimekko-chart) .app {
     .container_side_scrolling_text {
       align-items: stretch;
       flex-direction: column;

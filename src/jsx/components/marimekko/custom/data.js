@@ -1,4 +1,4 @@
-// Box figure I.3.2 – traced value added in one advanced AI server rack.
+// Box figure I.3.2 – traced value added in one AI advanced server rack.
 // Raw values from "Marimekko Chart Raw Data.xlsx" (Sheet1, rows 2–6) drive the column heights.
 // Column widths use the published rounded shares (raw: 4.248, 3.510, 9.915, 1.887, 12.413, 68.027) so they sum to 100%.
 
