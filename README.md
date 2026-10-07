@@ -12,9 +12,12 @@ with narrative text, data visualisations and chapter navigation.
 Content is authored in MDX (`src/Article.mdx`) and rendered as a standalone React
 application that is embedded within UNCTAD's Drupal platform.
 
-> **Status:** scaffold only. The chapter titles, copy, images and chart ids are
-> placeholders mirroring last year's World Investment Report minisite. Replace
-> them as the real TDR 2026 content becomes available.
+The site has an introduction and three chapters. Each chapter opens with a
+side-scrolling image section, followed by the chapter header, a takeaway box, an
+"In numbers" data sheet, the narrative with Datawrapper charts and a custom D3
+focus chart, and calls to action. A footer links to the full report and video.
+
+Developer handover notes and working rules are in [`CLAUDE.md`](CLAUDE.md).
 
 ## Embedding
 
@@ -89,20 +92,26 @@ Contact Teemo Tebest.
 
 This is a Vite + React project.
 
-* `npm install`
+* `npm install` (requires a `GITHUB_PACKAGES_TOKEN` environment variable, see Packages)
 * `npm run start`
 
 Project should start at: http://localhost:8080
+
+* `npx biome check src` – lint and format check (`npm run lint:fix` to fix).
 
 For developing please refer to `package.json`.
 
 ### Deployment
 
 * `npm run build` – production bundle into `dist/` (runs `scripts/postbuild.js` to
-  rewrite absolute HTML and CSS asset paths to relative for both entry points).
-  Vite content-hashes all shared JavaScript chunks and their imports.
+  rewrite absolute HTML and CSS asset paths to relative for all entry points).
+  Vite content-hashes all shared JavaScript chunks and their imports. `dist/` is
+  committed.
+* `npm run push` – push `main` to both remotes: `origin` (GitHub) and `unctad` (Azure DevOps).
 * `npm run sync-gh-pages` – push `dist/` to the `gh-pages` branch for the live demo.
-* `npm run sync-prod` – copy the build to Azure blob storage (`storage.unctad.org`).
+* `npm run login` – Azure service-principal login (needs `AZURE_USER`, `AZURE_PW`, `AZURE_TENANT`).
+* `npm run sync-prod` – copy `js`, `css` and `assets` from the build to Azure blob
+  storage (`storage.unctad.org`, needs `AZURE_STORAGE_NAME`).
 
 ## Files and folders
 
@@ -110,13 +119,32 @@ All public assets go to folder `public`.
 
 All source code goes to folder `src`.
 
-* `src/meta.json` – report title, subtitle, year, chapter list and PDF/overview URLs.
+* `src/meta.json` – report title, subtitle, year, hero image, overview/full-report
+  URLs, chapter list (titles, subtitles, images, chapter PDF URLs) and footer content.
 * `src/Article.mdx` – the full narrative (copy + component placement).
-* `src/jsx/App.jsx` – component registry passed to the MDX, scroll-reveal observer, theme colours.
+* `src/jsx/App.jsx` – component registry passed to the MDX and theme colours.
 * `src/jsx/IndexMarimekkoFocus.jsx` – standalone Chapter I scroll-story entry.
 * `src/jsx/IndexMarimekkoChart.jsx` – standalone interactive chart entry, without the scroll story.
 * `src/jsx/App.css` – project-specific layout and narrative styles.
-* `src/jsx/components/` – project-specific components (chart wrappers etc.).
+* `src/jsx/components/minisite/` – local hero (`Header`), `HeaderChapter`, `Footer`
+  and `InNumbers` components.
+* `src/jsx/components/marimekko|trade|investment/` – the three D3 focus charts.
+* `public/assets/img/` – images. The hero uses `2026-tdr_report_main_v2.jpg`;
+  `2026-tdr_report_main.jpg` is kept as an alternative.
+
+### Content driven by `meta.json`
+
+* Chapter PDF download buttons (hero cards and chapter headers) appear only when
+  the chapter's `pdf_url` is set.
+* Footer blocks appear only when their content exists under `footer`: the video
+  (`video_url`), language links, the launch event (`launch_event_url`) and media
+  links. Items with an empty `url` are hidden.
+
+### In numbers data sheets
+
+Each chapter has an `InNumbers` sheet after its takeaway box: a count-up headline
+figure, one visual (`bars`, a flag `pair` or a `share` bar) and up to three facts
+with line icons (see the `ICONS` map in `InNumbers.jsx`).
 
 ### Marimekko scroll narrative
 
@@ -179,34 +207,34 @@ The following packages are used in this project by default.
 
 ### Shared UNCTAD packages
 
-* **@unctad-infovis/general-tools** — shared React components (`ButtonAnchor`, `ButtonShare`, `ChartDataWrapper`, `Image`, `ProgressBar`, `Quote`, `Select`, `Tooltip`, `UNCTADSiteHeader`, `BackToTop`, …), helpers (`BasePath`, `LoadFile`, `CsvToJson`, `FormatNr`, `RoundNr`, `UseIsVisible`, …) and base design-token styles
-* **@unctad-infovis/minisite-tools** — report/minisite layout components (`Header`, `HeaderChapter`, `Footer`, `SideScrollingText`)
+* **@unctad-infovis/general-tools** – shared React components (`ButtonAnchor`, `ButtonShare`, `ChartDataWrapper`, `CircleFlag`, `Image`, `RollingNumber`, `ProgressBar`, `Quote`, `Select`, `Tooltip`, `UNCTADSiteHeader`, `BackToTop`, …), helpers (`BasePath`, `LoadFile`, `CsvToJson`, `FormatNr`, `RoundNr`, `UseIsVisible`, …) and base design-token styles
+* **@unctad-infovis/minisite-tools** – report/minisite layout components (`Header`, `HeaderChapter`, `Footer`, `SideScrollingText`)
 
 These packages are published from the [`un-init-project`](https://github.com/unctad-infovis/un-init-project) monorepo to GitHub Packages, so installing needs an `.npmrc` with `@unctad-infovis:registry=https://npm.pkg.github.com` and a `GITHUB_PACKAGES_TOKEN` environment variable.
 
 ### Project specific
 
-* none yet — `d3`, `highcharts` and `uuid4` (used by the sibling report projects for data visualisations) will be added once the first TDR chart is built
+* **d3** – the three custom focus charts (Marimekko, trade, investment). Other charts are Datawrapper embeds via `ChartDataWrapper`.
 
 ### Build & Dev Server
 
-* **vite** — development server with hot module replacement and production bundler, replaces webpack
-* **@vitejs/plugin-react** — adds React and JSX support to Vite
+* **vite** – development server with hot module replacement and production bundler, replaces webpack
+* **@vitejs/plugin-react** – adds React and JSX support to Vite
 
 ### React
 
-* **react** — UI component library
-* **react-dom** — renders React components to the DOM
+* **react** – UI component library
+* **react-dom** – renders React components to the DOM
 
 ### Formatter & Linter
 
-* **@biomejs/biome** — formats and lints JS, JSX and CSS files on save, replaces ESLint + Prettier
+* **@biomejs/biome** – formats and lints JS, JSX and CSS files on save, replaces ESLint + Prettier
 
 ### Minification
 
-* **terser** — minifies the production JavaScript bundle, removes console.logs in production builds
+* **terser** – minifies the production JavaScript bundle, removes console.logs in production builds
 
 ### MDX
 
-* **@mdx-js/rollup** — Vite/Rollup plugin that compiles MDX files into React components
-* **@mdx-js/react** — provides React context for MDX components
+* **@mdx-js/rollup** – Vite/Rollup plugin that compiles MDX files into React components
+* **@mdx-js/react** – provides React context for MDX components

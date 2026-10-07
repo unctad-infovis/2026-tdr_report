@@ -4,11 +4,23 @@ import Image from '@unctad-infovis/general-tools/components/Image.jsx';
 import './HeaderChapter.css';
 
 function HeaderChapter({ pdf_url, image_url, subtitle, title }) {
+  const subtitleIndex = subtitle ? (title?.toLowerCase().indexOf(subtitle.toLowerCase()) ?? -1) : -1;
+  const showSubtitle = subtitle && subtitleIndex === -1;
   return (
     <div className="container_chapter_header">
       <div>
-        <h3>{title}</h3>
-        <h4>{subtitle}</h4>
+        <h3>
+          {subtitleIndex > 0 ? (
+            <>
+              {title.slice(0, subtitleIndex).trim()}
+              <br />
+              {title.slice(subtitleIndex)}
+            </>
+          ) : (
+            title
+          )}
+        </h3>
+        {showSubtitle && <h4>{subtitle}</h4>}
       </div>
       {pdf_url && <ButtonAnchor className="chapter_download" text="Download" url={pdf_url} />}
       <div className="hidden">
