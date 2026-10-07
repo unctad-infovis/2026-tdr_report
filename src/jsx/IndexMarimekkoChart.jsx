@@ -15,6 +15,6 @@ createRoot(container).render(
       '--un-chapter-card-ratio': '1 / 1'
     }}
   >
-    <ChartMarimekko />
+    <ChartMarimekko fadeIn={false} />
   </div>
 );

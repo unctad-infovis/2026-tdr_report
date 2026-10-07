@@ -28,7 +28,7 @@ export const ChartMarimekkoMeta = () => (
   </div>
 );
 
-const ChartMarimekko = ({ activeColumn = null, scrollStory = false }) => {
+const ChartMarimekko = ({ activeColumn = null, fadeIn = true, scrollStory = false }) => {
   const [setFigureNode, isVisible] = useIsVisible(0.4);
   const chartRef = useRef(null);
   const svgRef = useRef(null);
@@ -90,7 +90,7 @@ const ChartMarimekko = ({ activeColumn = null, scrollStory = false }) => {
 
   return (
     <figure className={`container_chart_marimekko${scrollStory ? ' chart_marimekko_story_figure' : ''}`} ref={setFigureNode}>
-      <div className="parallax_container" style={{ opacity: isVisible || scrollStory ? '1' : '0', top: isVisible || scrollStory ? '0px' : '50px' }}>
+      <div className="parallax_container" style={{ opacity: isVisible || scrollStory || !fadeIn ? '1' : '0', top: isVisible || scrollStory || !fadeIn ? '0px' : '50px' }}>
         <div className="chart_marimekko">
           <div className="chart_header">
             <svg className="chart_arrow" viewBox="0 0 288.8 289.6" aria-hidden="true">
