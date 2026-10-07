@@ -4,7 +4,7 @@
     margin-bottom: 0;
   }
   .container_chapter > .in_numbers {
-    background: var(--un-color-blue-darkest);
+    background: var(--un-color-blue-text-dark);
     box-sizing: border-box;
     color: #fff;
     margin: 0 auto 40px;
@@ -43,10 +43,10 @@
     .in_numbers_main {
       align-items: flex-end;
       display: flex;
-      gap: clamp(24px, 5vw, 64px);
-      justify-content: space-between;
+      gap: clamp(32px, 7vw, 96px);
+      justify-content: center;
       .in_numbers_headline {
-        flex: 1 1 auto;
+        flex: 0 1 auto;
         .in_numbers_value {
           font-size: clamp(80px, 13vw, 150px);
           font-variant-numeric: tabular-nums;
