@@ -189,6 +189,10 @@
     }
   }
 }
+/* Standalone embed: chart card grows up to 700px (figure adds 10px side padding) */
+#app-root-2026-tdr_report-marimekko-chart .app figure.container_chart_marimekko {
+  max-width: 720px;
+}
 @media (prefers-reduced-motion: reduce) {
   :is(#app-root-2026-tdr_report, #app-root-2026-tdr_report-marimekko-focus, #app-root-2026-tdr_report-marimekko-chart) .app figure.container_chart_marimekko {
     .parallax_container {
