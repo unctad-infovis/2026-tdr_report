@@ -9,7 +9,7 @@ createRoot(container).render(
   <div
     className="app"
     style={{
-      '--main-color': 'var(--un-color-red-dark)',
+      '--main-color': 'var(--un-color-red)',
       '--secondary-color': 'var(--un-color-red-darkest)',
       '--un-column-width': '920px',
       '--un-chapter-card-ratio': '1 / 1'

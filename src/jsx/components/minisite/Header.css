@@ -3,8 +3,11 @@
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
+    --un-column-width: 1350px;
     margin: auto;
-    --un-column-width: 1420px;
+    @media (max-width: 1399px) {
+      --un-column-width: 1170px;
+    }
     position: relative;
     z-index: 2;
     &::before {
@@ -23,8 +26,11 @@
       margin: auto;
       max-width: var(--un-column-width);
       min-height: 50vh;
-      padding-inline: clamp(16px, 4vw, 48px);
+      padding-inline: 0;
       width: 100%;
+      @media (max-width: 1399px) {
+        padding-inline: 10px;
+      }
       .header_top {
         box-sizing: border-box;
         margin-bottom: 100px;
@@ -214,7 +220,7 @@
 
 @media (max-width: 768px) {
   #app-root-2026-tdr_report .app div.container_header_wrapper .container_header {
-    padding: 0 16px;
+    padding: 0 10px;
   }
   #app-root-2026-tdr_report .app div.container_header_wrapper .container_header .header_bottom .container_chapters_navigation {
     flex-direction: column;
