@@ -1,5 +1,6 @@
 import ButtonAnchor from '@unctad-infovis/general-tools/components/ButtonAnchor.jsx';
 import ButtonShare from '@unctad-infovis/general-tools/components/ButtonShare.jsx';
+import { resolveAsset } from '@unctad-infovis/general-tools/helpers/BasePath.js';
 
 import './Header.css';
 
@@ -12,7 +13,7 @@ function Header({ bg_image_url, chapters, full_report_url, overview_url, subtitl
     });
   };
   return (
-    <div className="container_header_wrapper" style={{ backgroundImage: `url(${bg_image_url})` }}>
+    <div className="container_header_wrapper" style={{ backgroundImage: `url(${resolveAsset(bg_image_url)})` }}>
       <div className="container_header">
         <div className="header_top">
           <h2>
@@ -41,7 +42,7 @@ function Header({ bg_image_url, chapters, full_report_url, overview_url, subtitl
                     <h3>{chapter.title}</h3>
                   </div>
                   <div className="chapter_image">
-                    <div style={{ backgroundImage: `url(${chapter.card_image_url})` }} />
+                    <div style={{ backgroundImage: `url(${resolveAsset(chapter.card_image_url)})` }} />
                   </div>
                   <div className="chapter_meta">
                     <div className="chapter_number">{i + 1}</div>
