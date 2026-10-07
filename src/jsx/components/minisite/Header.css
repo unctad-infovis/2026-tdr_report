@@ -4,7 +4,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     margin: auto;
-    --un-column-width: 1350px;
+    --un-column-width: 1420px;
     position: relative;
     z-index: 2;
     &::before {
