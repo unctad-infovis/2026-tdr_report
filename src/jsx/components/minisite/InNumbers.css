@@ -128,12 +128,101 @@
           opacity: 0.85;
         }
       }
+      .in_numbers_pair {
+        align-items: center;
+        align-self: center;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 16px;
+        margin: 0;
+        .pair_flags {
+          align-items: center;
+          display: flex;
+          .pair_flag {
+            border: 2px solid #fff;
+            box-sizing: border-box;
+            /* biome-ignore lint/complexity/noImportantStyles: CircleFlag sets its size inline. */
+            height: clamp(64px, 8vw, 88px) !important;
+            /* biome-ignore lint/complexity/noImportantStyles: CircleFlag sets its size inline. */
+            width: clamp(64px, 8vw, 88px) !important;
+          }
+          .pair_link {
+            border-top: 4px dotted #fff;
+            transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+            width: 0;
+            .visible & {
+              width: clamp(28px, 4vw, 48px);
+            }
+          }
+        }
+        .pair_trend {
+          fill: none;
+          height: 40px;
+          stroke: var(--un-color-yellow);
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          stroke-width: 2.4;
+          width: 40px;
+        }
+      }
+      .in_numbers_share {
+        flex: 0 0 auto;
+        margin: 0;
+        width: min(240px, 100%);
+        .share_name {
+          align-items: center;
+          color: var(--un-color-yellow);
+          display: flex;
+          font-size: var(--un-font-size-xs);
+          font-weight: var(--un-font-weight-bolder);
+          gap: 8px;
+          margin-bottom: 8px;
+          .share_icon {
+            fill: none;
+            height: 22px;
+            stroke: #fff;
+            stroke-linejoin: round;
+            stroke-width: 1.8;
+            width: 22px;
+          }
+        }
+        .share_track {
+          background: rgb(255 255 255 / 30%);
+          height: 28px;
+          .share_bar {
+            align-items: center;
+            background: #fff;
+            box-sizing: border-box;
+            display: flex;
+            height: 100%;
+            justify-content: flex-end;
+            padding-right: 6px;
+            transition: width 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+            width: 0;
+            .visible & {
+              width: var(--share);
+            }
+            .share_value {
+              color: var(--un-color-blue-darkest);
+              font-size: var(--un-font-size-xs);
+              font-weight: var(--un-font-weight-bolder);
+            }
+          }
+        }
+        figcaption {
+          font-size: var(--un-font-size-xxs);
+          line-height: 1.35;
+          margin-top: 10px;
+          opacity: 0.85;
+        }
+      }
     }
     .in_numbers_facts {
       border-top: 1px solid rgb(255 255 255 / 35%);
       display: grid;
       gap: 24px clamp(20px, 3vw, 40px);
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       list-style: none;
       margin: clamp(28px, 4vw, 44px) 0 0;
       max-width: none;
@@ -182,11 +271,18 @@
       .in_numbers_main {
         align-items: flex-start;
         flex-direction: column;
+        .in_numbers_pair {
+          align-self: flex-start;
+        }
       }
     }
     @media (prefers-reduced-motion: reduce) {
       .in_numbers_bars li .bar {
         transform: none;
+        transition: none;
+      }
+      .pair_link,
+      .share_bar {
         transition: none;
       }
     }

@@ -88,6 +88,7 @@
         { icon: 'target', text: 'Estimated financing gap for the Sustainable Development Goals', value: '$4.3 trillion' }
       ]}
       headline={2.6}
+      headlineDecimals={1}
       headlineText="Global growth projected for 2026, down from 2.9 per cent in 2025"
       headlineUnit="%"
     />
@@ -180,6 +181,20 @@
       Trade remains global, but its geography is shifting and market access is becoming more selective. Strategic priorities and compliance increasingly shape who can trade – and who benefits.
     </div>
 
+    <InNumbers
+      facts={[
+        { icon: 'trend_down', text: 'Outside of Asia, the value of trade among developing economies grew 2.5 per cent in 2025, down from 8 per cent a year in 2019–2024', value: '2.5%' },
+        { icon: 'route', text: 'New active export relationships from Africa to Europe, 2019–2025: the largest increase of any corridor', value: '+83' },
+        { icon: 'globe', text: 'The main beneficiary, as firms diversified sourcing while still relying on China-centred inputs', value: 'East Asia' }
+      ]}
+      headline={20}
+      headlineLabel="Minus 20%"
+      headlinePrefix="−"
+      headlineText="Trade between China and the United States has fallen by more than 20 per cent since 2024"
+      headlineUnit="%"
+      pair={{ from: 'cn', label: 'Trade between China and the United States is falling', to: 'us' }}
+    />
+
     **Trade remains global, but access is becoming more selective. Policy increasingly shapes partner choices.**
 
     Since 2015, goods have travelled farther between trading partners, showing that companies still source what they need from suppliers far from home where cost and scale make sense. But since 2021, a growing share of global trade is taking place between geoeconomically compatible countries as geoeconomic risk and policy uncertainty weigh more heavily on sourcing decisions.
@@ -251,6 +266,19 @@
 
       Exports alone don't guarantee development gains. Ownership, local capabilities and access to higher-value activities determine how much countries gain. Regional cooperation can widen those opportunities.
     </div>
+
+    <InNumbers
+      facts={[
+        { icon: 'chip', text: 'Share of high-value investment in strategic sectors captured by developed countries: semiconductor value chains, energy transition technologies, artificial intelligence infrastructure, advanced and sensitive technologies', value: '~70%' },
+        { icon: 'gem', text: 'Developing countries’ share of FDI in critical minerals and strategic materials: the only strategic sector where they lead', value: '59%' }
+      ]}
+      headline={1}
+      headlineLabel="Less than 1%"
+      headlinePrefix="<"
+      headlineText="of the value in green supply chains is retained by Africa, which mines most of the world’s cobalt"
+      headlineUnit="%"
+      share={{ caption: 'Share of global mined cobalt supply: Democratic Republic of the Congo, 2025', icon: 'mountain', label: 'Cobalt', value: 73 }}
+    />
 
     **Industrialization and export growth helped parts of Asia catch up. Competition over semiconductors, AI infrastructure and clean-energy technologies is making that path harder to follow.**
 
