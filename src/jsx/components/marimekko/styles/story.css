@@ -90,7 +90,7 @@
           min-height: 125svh;
           padding: 30svh 20px;
           .marimekko_story_text {
-            background: var(--main-color);
+            background: var(--un-color-blue);
             color: #fff;
             padding: clamp(16px, 2vw, 28px);
             h3.marimekko_story_headline {

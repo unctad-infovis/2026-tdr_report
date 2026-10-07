@@ -107,7 +107,7 @@
       max-width: 1250px;
     }
     .highlight_container {
-      background: var(--main-color);
+      background: var(--un-color-blue);
       border-radius: 0;
       box-sizing: border-box;
       color: #fff;
@@ -179,7 +179,7 @@
         margin: 0;
         padding: 0;
         &:before {
-          background-color: var(--main-color);
+          background-color: var(--un-color-blue);
           background-image: none;
           bottom: 0;
           display: block;
@@ -211,7 +211,7 @@
       /* biome-ignore lint/complexity/noImportantStyles: The shared component sets opacity inline from scroll state. */
       opacity: 1 !important;
       &::after {
-        background: var(--secondary-color);
+        background: var(--un-color-blue);
         content: '';
         inset: 0;
         opacity: 0.56;
@@ -251,7 +251,7 @@
     .section {
       height: 4px;
       .progress_bar {
-        background: var(--main-color);
+        background: var(--un-color-blue);
         height: 4px;
       }
     }
@@ -259,17 +259,17 @@
   .container_back_to_top {
     animation: none;
     button {
-      background-color: #fff;
-      border: 1px solid var(--main-color);
+      background-color: var(--un-color-yellow);
+      border: 1px solid var(--un-color-yellow);
       box-shadow: none;
-      color: var(--main-color);
+      color: #000;
       &:focus-visible {
-        outline: 3px solid var(--un-color-yellow);
+        outline: 3px solid var(--un-color-blue-darkest);
         outline-offset: 3px;
       }
       &:hover {
-        background-color: var(--main-color);
-        color: #fff;
+        background-color: var(--un-color-yellow-dark);
+        border-color: var(--un-color-yellow-dark);
       }
     }
   }

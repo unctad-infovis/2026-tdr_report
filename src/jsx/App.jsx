@@ -14,6 +14,7 @@ import ChartMarimekkoStory from './components/marimekko/ChartMarimekkoStory.jsx'
 import Footer from './components/minisite/Footer.jsx';
 import Header from './components/minisite/Header.jsx';
 import HeaderChapter from './components/minisite/HeaderChapter.jsx';
+import InNumbers from './components/minisite/InNumbers.jsx';
 import ChartFocusTrade from './components/trade/ChartFocusTrade.jsx';
 
 import '@unctad-infovis/general-tools/styles/styles.css';
@@ -30,6 +31,7 @@ const components = {
   Header,
   HeaderChapter,
   Image,
+  InNumbers,
   ProgressBar,
   Quote,
   SideScrollingText
