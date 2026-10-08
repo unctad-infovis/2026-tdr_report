@@ -2,7 +2,7 @@
   align-items: stretch;
   display: grid;
   gap: 24px;
-  grid-template-columns: minmax(0, 1fr) 232px;
+  grid-template-columns: minmax(0, 1fr) 190px;
   margin: 24px auto 32px;
   max-width: 920px;
   width: 100%;
