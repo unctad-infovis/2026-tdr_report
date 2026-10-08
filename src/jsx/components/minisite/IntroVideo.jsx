@@ -1,16 +1,30 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { resolveAsset } from '@unctad-infovis/general-tools/helpers/BasePath.js';
 import './IntroVideo.css';
 
 export default function IntroVideo({ url, title, poster_url, languages = [] }) {
   const [playing, setPlaying] = useState(false);
+  const frameRef = useRef(null);
+
+  useEffect(() => {
+    if (playing || !('IntersectionObserver' in window)) return;
+    const observer = new IntersectionObserver(entries => {
+      if (entries.some(entry => entry.isIntersecting && entry.intersectionRatio >= 0.25)) {
+        setPlaying(true);
+        observer.disconnect();
+      }
+    }, { threshold: 0.25 });
+    observer.observe(frameRef.current);
+    return () => observer.disconnect();
+  }, [playing]);
   const links = languages.filter(link => link.label && link.url);
   const playerUrl = new URL(url);
   playerUrl.searchParams.set('autoplay', '1');
+  playerUrl.searchParams.set('muted', '1');
   playerUrl.searchParams.set('playsinline', '1');
   return (
     <div className="intro_video_panel">
-      <div className="intro_video_frame">
+      <div className="intro_video_frame" ref={frameRef}>
         {playing ? (
           <iframe src={playerUrl.toString()} title={title || 'Trade and Development Report 2026 video'} allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
         ) : (
