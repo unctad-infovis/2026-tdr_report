@@ -3,18 +3,13 @@ import './Footer.css';
 const hasUrl = link => Boolean(link?.label && link?.url);
 
 function VideoEmbed({ title, url }) {
-  return (
-    <div className="iframe_container iframe_16_9">
-      <iframe allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" frameBorder="0" src={url} title={title} />
-    </div>
-  );
+  return <div className="iframe_container iframe_16_9"><iframe allow="autoplay; fullscreen; picture-in-picture; encrypted-media" frameBorder="0" src={url} title={title} /></div>;
 }
 
 function Footer({ content = {}, reportUrl = '' }) {
-  const { language_links = [], launch_event_title = '', launch_event_url = '', media_links = [], video_title = '', video_url = '' } = content;
-  const languageLinks = language_links.filter(hasUrl);
+  const { launch_event_title = '', launch_event_url = '', media_links = [] } = content;
   const mediaLinks = media_links.filter(hasUrl);
-  const hasElements = video_url || launch_event_url || mediaLinks.length > 0;
+  const hasElements = launch_event_url || mediaLinks.length > 0;
 
   if (!reportUrl && !hasElements) return null;
 
@@ -32,26 +27,6 @@ function Footer({ content = {}, reportUrl = '' }) {
         <div className="footer_elements">
           <div className="footer_element">
             <div className="footer_content">
-              {video_url && (
-                <>
-                  <h3>Watch the video</h3>
-                  <VideoEmbed title={video_title || 'Video'} url={video_url} />
-                  {languageLinks.length > 0 && (
-                    <ul className="language_links">
-                      <li>
-                        {languageLinks.map((link, i) => (
-                          <span key={link.label}>
-                            {i > 0 && ', '}
-                            <a href={link.url} target="_blank" rel="noreferrer">
-                              {link.label}
-                            </a>
-                          </span>
-                        ))}
-                      </li>
-                    </ul>
-                  )}
-                </>
-              )}
               {launch_event_url && (
                 <div>
                   <h4>Watch the launch event</h4>

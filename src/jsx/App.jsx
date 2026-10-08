@@ -15,6 +15,7 @@ import Footer from './components/minisite/Footer.jsx';
 import Header from './components/minisite/Header.jsx';
 import HeaderChapter from './components/minisite/HeaderChapter.jsx';
 import InNumbers from './components/minisite/InNumbers.jsx';
+import IntroVideo from './components/minisite/IntroVideo.jsx';
 import ReportCard from './components/minisite/ReportCard.jsx';
 import ChartFocusTrade from './components/trade/ChartFocusTrade.jsx';
 
@@ -33,6 +34,7 @@ const components = {
   HeaderChapter,
   Image,
   InNumbers,
+  IntroVideo,
   ProgressBar,
   Quote,
   ReportCard,

@@ -25,19 +25,20 @@
  *********************************************/}
 
 <div className="container_chapter">
-  <ReportCard cover_url={props.meta.full_report_cover_url} languages={props.meta.full_report_languages} />
+  #### Global trade reached a record $35 trillion in 2025 despite conflicts and rising trade restrictions.
 
-  #### Global trade surpassed $35 trillion for the first time in 2025 despite conflicts and rising trade restrictions, and is expected to remain resilient in 2026, even as a major energy shock adds to these pressures. But that resilience is fragile and uneven. Growth is slowing, financial risks are mounting and development finance is under strain.
+  #### It's expected to remain resilient in 2026, even as a major energy shock adds pressure.
 
-  The rules of the game are changing. Governments are using trade restrictions, financial subsidies and technology controls to compete for industries they see as vital to economic and national security, including semiconductors, artificial intelligence infrastructure and clean energy technologies.
+  <div className="intro_media">
+    <IntroVideo key={props.meta.footer.video_url} url={props.meta.footer.video_url} title={props.meta.footer.video_title} poster_url={props.meta.image_url} languages={props.meta.footer.language_links} />
+    <ReportCard cover_url={props.meta.full_report_cover_url} report_url={props.meta.full_report_url} />
+  </div>
 
-  The report calls this <strong>geoeconomics</strong> – the use of economic tools to pursue strategic goals – and it's redrawing the global trade and investment map. Trade remains global, but access is becoming more selective.
+  **But the resilience is fragile and uneven**. Growth is slowing, financial risks are mounting and development finance is under strain. Apart from a handful of Asian economies, most of the global South is falling further behind.
 
-  Apart from a handful of Asian economies, most of the global South is falling further behind. A country can attract investment, supply critical minerals or assemble goods for export and still capture little of the value created, as foreign firms often control the most profitable stages of production.
+  **The rules of the game are also changing**. Governments are using trade restrictions, financial subsidies and technology controls to compete for industries seen as vital to economic and national security, including semiconductors, artificial intelligence infrastructure and clean energy technologies. Called geoeconomics, it's reshaping global trade and investment.
 
-  Yet the changing map of production also creates openings. As companies shift operations, some developing economies are attracting new trade and investment. Their rise is also widening markets for others.
-
-  The question is whether developing economies can turn these openings into stronger industries and lasting growth.
+  **Yet the changing map of global production also creates openings**. As companies shift operations, some developing economies are attracting new trade and investment. The question is whether developing economies can turn these openings into stronger industries and lasting growth.
 
   <Quote
     name="Pedro Manuel Moreno"
@@ -93,15 +94,15 @@
       ]}
       headline={2.6}
       headlineDecimals={1}
-      headlineText="Global growth projected for 2026, down from 2.9 per cent in 2025"
+      headlineText="Global growth projected for 2026, down from 2.9% in 2025"
       headlineUnit="%"
     />
 
-    **Global growth is projected at 2.6% in 2026 and 2.7% in 2027, down from 2.9% in 2025. Growth in developing economies is expected to slow from 4.7% in 2025 to 4% in 2026.**
+    **Growth in developing economies is expected to slow from 4.7% in 2025 to 4% in 2026.**
 
-    **Asia** is expected to account for 59% of global growth in 2026. **India** is projected to grow by 7.3%, **Indonesia** 5.2% and **China** 4.5%. Yet outside a few Asian frontrunners, most developing economies have fallen further behind richer ones since the mid-2010s.
+    **Asia** is expected to account for 59% of global growth in 2026. **India** is projected to grow by 7.3%, **Indonesia** 5.2% and **China** 4.5%. Yet outside a few Asian frontrunners, most developing economies have fallen further behind since the mid-2010s.
 
-    That uneven resilience faces three pressures: the energy shock, risks in the AI boom and shrinking development finance.
+    Uneven resilience faces three pressures: the energy shock, risks in the AI boom and shrinking development finance.
 
     {/* FIGURE I.2 – Income: A few Asian economies catch up as most developing economies fall behind. Average income per person relative to developed economies, selected Asian economies and other developing economies, percentage, 1992–2026. Panel A: selected Asian economies. Panel B: developing economies except selected Asian economies. */}
     <div className="two_column">
@@ -109,7 +110,9 @@
       <ChartDataWrapper chart_id="p9Uh4" />
     </div>
 
-    <strong>Energy shock hits poorer households hardest.</strong> The Middle East conflict disrupted energy supplies, sending crude oil from $70 to over $110 a barrel. Poorer households feel the squeeze most. They spend two to three times more of their income on fuel than wealthier ones.
+    #### Energy shock hits poorer households hardest
+
+    The Middle East conflict disrupted energy supplies, sending crude oil from $70 to over $110 a barrel. Poorer households feel the squeeze most.
 
     Higher energy prices fuel inflation. Central banks may raise interest rates in response, but that can't restore lost supplies. The shock has exposed the cost of energy dependence and adds urgency to diversifying energy sources. Since 2024, renewables have been cheaper than the least expensive new fossil-fuel power in more than 90% of cases.
 
@@ -119,17 +122,14 @@
       <ChartDataWrapper chart_id="FE3Iw" />
     </div>
 
-    {/* FIGURE I.4 – Many vulnerable economies are highly dependent on imported energy. Net imports of mineral fuels, oils and distillates, selected economies, percentage of gross domestic product, 2023. */}
-    <ChartDataWrapper chart_id="PLACEHOLDER_I4" />
+    {/* FIGURE I.4 – Many vulnerable economies are highly dependent on imported energy. Net imports of mineral fuels, oils and distillates, selected economies, percentage of gross domestic product, 2023. Datawrapper chart bZsK5. */}
+    <ChartDataWrapper chart_id="bZsK5" />
 
-    <strong>AI boom lifts trade and raises financial risks.</strong> Global trade has held up better than expected given the risks, but growth rests on a narrow base. Trade in goods and services grew 4.4% in real terms in 2025 and is projected to expand about 4% in 2026.
+    #### AI boom lifts trade and raises financial risks
 
-    AI-related goods, including chips and servers used in data centres, have become the main driver of merchandise trade. They made up about one sixth of global goods trade by value in 2025 and accounted for 42% of its growth. If demand for AI hardware slows, goods trade could lose a major source of momentum.
+    Global trade has held up better than expected given the risks. Trade in goods and services grew 4.4% in real terms in 2025 and is projected to expand about 4% in 2026. Since March 2026, higher prices have driven much of the registered growth in trade values.
 
-    Since March 2026, higher prices have driven much of the registered growth in trade values. The value of goods trade is rising much faster than volumes. Volumes are projected to grow between 4.5% and 5% in 2026, compared with 10% in value.
-
-    {/* FIGURE I.21 – Higher prices have driven recent growth in global trade value. World goods trade by value, prices and volume, quantity traded, index: average 2023=100, January 2023–June 2026. */}
-    <ChartDataWrapper chart_id="cg2db" />
+    But growth rests on a narrow base. AI-related goods, including chips and servers used in data centres, have become the main driver of merchandise trade. They made up about one sixth of global goods trade by value in 2025 and accounted for 42% of its growth. If demand for AI hardware slows, goods trade could lose a major source of momentum.
 
     The AI boom shows signs of earlier financial bubbles. A fall in share prices could trigger selling and squeeze credit well beyond the technology sector.
 
@@ -138,15 +138,14 @@
     {/* BOX FIGURE I.3.2 – After-tax profit takes 68% of the value traced in an AI advanced server rack. Traced value added in producing one AI advanced server rack by component and supplier group, percentage. Column widths show component shares. */}
     <ChartMarimekkoStory />
 
-    <strong>Less aid, less room to respond.</strong> Development aid is shrinking as financial volatility rises. Aid is projected to fall 6.9% in 2026, its third consecutive annual decline, and has shifted away from developing regions since 2022.
+    #### Less aid, more volatile capital flows
 
-    {/* FIGURE I.17 – Aid could fall to 0.23% of donor income, far below target. Net official development assistance excluding debt relief, members of the OECD's Development Assistance Committee, billions of dollars and percentage of donor gross national income, 2000–2026. */}
-    <ChartDataWrapper chart_id="ds84v" />
+    Development aid is shrinking as financial volatility rises. It's projected to fall 6.9% in 2026, marking a third straight annual decline. Since 2022, aid has also shifted away from developing regions.
 
-    Amid global uncertainty in 2026, capital flows to developing countries became more volatile. When investors pull back, borrowing costs can rise, leaving governments with less room to respond to shocks or invest in public services and infrastructure.
+    {/* FIGURE I.17 – Aid could fall to 0.23% of donor income, far below target. Net official development assistance excluding debt relief, members of the OECD's Development Assistance Committee, billions of dollars and percentage of donor gross national income, 2000–2026. Datawrapper chart fhJux (replaces ds84v). */}
+    <ChartDataWrapper chart_id="fhJux" />
 
-    {/* FIGURE I.26 – Foreign investment in shares and bonds has swung sharply in emerging economies. Monthly net foreign investment in shares and bonds, selected emerging economies, billions of dollars, January 2014–11 September 2026. */}
-    <ChartDataWrapper chart_id="Op4A0" />
+    Meanwhile, amid global uncertainty, capital flows to developing countries became more volatile in 2026. When investors pull back, borrowing costs can rise, leaving governments with less room to respond to shocks or invest in public services and infrastructure.
 
     <div className="highlight_container calls_to_action">
       ### Calls to action
@@ -188,52 +187,50 @@
 
     <InNumbers
       facts={[
-        { icon: 'trend_down', text: 'Outside of Asia, the value of trade among developing economies grew 2.5 per cent in 2025, down from 8 per cent a year in 2019–2024', value: '2.5%' },
+        { icon: 'trend_down', text: 'Outside of Asia, the value of trade among developing economies grew 2.5% in 2025, down from 8% a year in 2019–2024', value: '2.5%' },
         { icon: 'route', text: 'New active export relationships from Africa to Europe, 2019–2025: the largest increase of any corridor', value: '+83' },
         { icon: 'globe', text: 'The main beneficiary, as firms diversified sourcing while still relying on China-centred inputs', value: 'East Asia' }
       ]}
       headline={20}
       headlineLabel="Minus 20%"
       headlinePrefix="-"
-      headlineText="Trade between China and the United States has fallen by more than 20 per cent since 2024"
+      headlineText="Trade between China and the United States has fallen by more than 20% since 2024"
       headlineUnit="%"
       pair={{ from: 'cn', label: 'Trade between China and the United States is falling', to: 'us' }}
     />
 
     **Trade remains global, but access is becoming more selective. Policy increasingly shapes partner choices.**
 
-    Since 2015, goods have travelled farther between trading partners, showing that companies still source what they need from suppliers far from home where cost and scale make sense. But since 2021, a growing share of global trade is taking place between geoeconomically compatible countries as geoeconomic risk and policy uncertainty weigh more heavily on sourcing decisions.
+    Since 2015, goods have travelled farther between trading partners, showing that companies still buy from distant suppliers when cost and scale make sense. But since 2021, a growing share of global trade has taken place between geoeconomically compatible countries. Geoeconomic risk and policy uncertainty are weighing more heavily on firms' sourcing decisions.
 
     {/* FIGURE II.9 – Trade reaches farther as partner compatibility edges up. Global goods trade by average distance and the Geoeconomic Compatibility Index, index: 2015=100, 2015–2025. */}
     <ChartFocusTrade />
 
-    <strong>Trade shifts can create new opportunities.</strong> Trade reconfiguration is creating new opportunities for some developing economies. United States imports from China fell 24.3% between 2024 and 2025, while those from the rest of East Asia rose 23.3%. Africa gained 83 export relationships with Europe and 74 within Africa from 2019 to 2025. Each relationship represents more than $1 million in goods exports between two countries.
+    #### Trade shifts can create new opportunities
 
-    But turning new trade links into lasting gains requires stronger industries, institutions and regulatory capacity.
+    The global trade map is shifting. Trade between **China** and the **United States** has fallen by more than 20% since 2024, while **East Asia** has expanded trade with both China and North America.
+
+    New trade links are emerging elsewhere, too. **Africa** gained 83 export relationships with **Europe** and 74 within Africa from 2019 to 2025. But turning new links into lasting gains requires stronger industries, institutions and regulatory capacity.
 
     {/* BOX FIGURE II.3.1 – New trade relationships emerge as others disappear. Top 10 increases and decreases in active bilateral merchandise export relationships by regional corridor, 2019–2025. */}
     <ChartDataWrapper chart_id="YyWmQ" />
 
-    <strong>Market access is becoming more costly and complex.</strong> Alongside shifts in trading partners, tariffs are raising the cost of reaching markets. The global average duty on manufactured goods rose from 1.9% in 2024 to 4.7% in 2025, reflecting increases in one major economy. Duties on imported components can also raise manufacturers' costs.
+    #### Market access is becoming more costly and complex
 
-    But the direct cost of duties is only part of the picture. Over the past 45 years, exports from least developed countries grew by 7.6% in periods when trade-policy uncertainty and geopolitical tension were both low, compared with 2.4% in high-uncertainty periods.
+    Alongside shifts in trading partners, tariffs are raising the cost of reaching markets. The global average duty on manufactured goods more than doubled from 1.9% in 2024 to 4.7% in 2025.
 
     {/* FIGURE II.2 – Global manufacturing tariffs more than doubled in 2025. Average tariffs weighted by the value of goods traded, agriculture, natural resources and manufacturing, percentage, 2024–2025. */}
     <ChartDataWrapper chart_id="suIeN" />
 
     Even when tariffs are low, exporters face a growing range of trade measures. Governments in both developed and developing economies are reporting more technical product, health and safety requirements.
 
-    Environmental requirements are also becoming more prominent, including rules on carbon emissions and deforestation. Firms may meet the underlying standards yet still be shut out if they can't provide the required evidence – a particular burden for smaller exporters.
+    Environmental requirements are also becoming more prominent. Firms may meet the underlying standards yet still be shut out if they can't provide the required evidence – a particular burden for smaller exporters.
 
-    {/* FIGURE II.3 – Developing countries drive the rise in reported trade requirements. Annual reports of technical product and health requirements for imported goods, developed and developing economies, number of reports, 1995–2025. */}
-    <ChartDataWrapper chart_id="FiWyN" />
+    #### Common rules and regional cooperation can widen market access
 
-    {/* FIGURE II.6 – Environmental measures make up a growing share of trade rules. Environment-related measures reported to the World Trade Organization, annual number and share of all trade-measure reports, 1997–2024. */}
-    <ChartDataWrapper chart_id="DtGyy" />
+    For developing economies, the World Trade Organization's non-discrimination rules can make market access more predictable and less dependent on bargaining power.
 
-    <strong>Common rules and regional cooperation can widen market access.</strong> For developing economies, the World Trade Organization's non-discrimination rules can make market access more predictable and less dependent on bargaining power.
-
-    Regional agreements can also widen markets and lower trade barriers. In Africa, full implementation of the African Continental Free Trade Area could raise regional income by 7% and lift 30 million people out of extreme poverty by 2035.
+    Regional agreements can also widen markets and lower trade barriers. In Africa, full implementation of the **African Continental Free Trade Area** could raise regional income by 7% and lift 30 million people out of extreme poverty by 2035.
 
     <div className="highlight_container calls_to_action">
       ### Calls to action
@@ -286,14 +283,18 @@
       share={{ caption: 'Share of global mined cobalt supply: Democratic Republic of the Congo, 2025', icon: 'mountain', label: 'Cobalt', value: 73 }}
     />
 
-    **Industrialization and export growth helped parts of Asia catch up. Competition over semiconductors, AI infrastructure and clean-energy technologies is making that path harder to follow.**
+    **Industrialization and export growth helped parts of Asia catch up.**
 
-    Strategic sectors' share of announced investment in new projects rose from 16% in 2020 to 44% in 2025. Advanced economies captured about 70% of high-value investment in these sectors. Developing economies led only in critical minerals.
+    **Competition over semiconductors, AI infrastructure and clean-energy technologies is making that path harder to follow.**
+
+    Advanced economies captured about 70% of high-value investment in these sectors. Developing economies led only in critical minerals.
 
     {/* FIGURE III.6 – Developed economies capture most strategic investment. Announced investment in new strategic projects, developed and developing economies, percentage of sector totals, 2020–2025. */}
     <ChartFocusInvestment />
 
-    <strong>Countries use different tools to support industry.</strong> Developed economies mainly use financial tools such as grants, state loans and rules on foreign investment and cross-border financial flows. Developing economies outside China rely more on trade policy.
+    #### Countries use different tools to support industry
+
+    Developed economies mainly use financial tools such as grants, state loans and rules on foreign investment and cross-border financial flows. Developing economies outside China rely more on trade policy.
 
     {/* FIGURE III.13 – Developed and developing economies use different industrial policy tools. Industrial policy measures by type and country group, percentage, 2008–2021 and 2022–2025. */}
     <div className="two_column">
@@ -301,28 +302,22 @@
       <ChartDataWrapper chart_id="9ee5l" />
     </div>
 
-    <strong>Exports don't guarantee local value.</strong> Mineral wealth alone can't guarantee local gains. The Democratic Republic of the Congo produced about 73% of the world's mined cobalt in 2025, but domestically owned producers accounted for just 1% of its output in 2025. Africa captures less than 1% of the value in green supply chains.
+    #### Exports don't guarantee local value
+
+    Mineral wealth alone can't guarantee local gains. The **Democratic Republic of the Congo** produced about 73% of the world's mined cobalt in 2025, but domestically owned producers accounted for just 1% of its output. **Africa** captures less than 1% of the value in green supply chains.
 
     {/* FIGURE III.17 – Local producers account for just 1% of Democratic Republic of the Congo's cobalt. Cobalt mine production in the Democratic Republic of the Congo, domestic artisanal and small-scale producers and multinational large-scale producers, percentage, 2020–2025. */}
     <ChartDataWrapper chart_id="ZqaLy" />
 
-    Mexico shows a similar gap between exports and local value. Its technology and electronics exports reached $110 billion in 2025, but 70.7% of their value was created abroad.
+    **Mexico** shows a similar gap between exports and local value. Its technology and electronics exports reached $110 billion in 2025, but 70.7% of their value was created abroad.
 
-    {/* FIGURE III.19 – Mexico's technology and electronics exports more than double. Mexico's exports of information and communications technology – telecommunications and sound equipment – and electronics – electrical machinery and parts – billions of dollars, 2000–2025. */}
-    <ChartDataWrapper chart_id="9VEnW" />
+    **Malaysia** has built a major semiconductor industry. But the highest-value activities remain concentrated in established semiconductor powers, limiting how far Malaysia can move up the value chain.
 
-    Malaysia has built a major semiconductor industry and its national strategy commits $5.3 billion to training 60,000 engineers and expanding research. Yet the highest-value parts of the industry – including frontier chip design, intellectual property and advanced wafer fabrication – face the limits of concentration in established semiconductor powers, limiting how far Malaysia can move into higher-value activities.
+    #### Regional cooperation can widen opportunities
 
-    {/* FIGURE III.22 – Malaysia's manufacturing gains face limits to further upgrading. Manufacturing value added, share of gross domestic product and productivity, 1990–2024 and 1990–2023, percentage and index: 1990=100. */}
-    <ChartDataWrapper chart_id="GNQZX" />
-    <ChartDataWrapper chart_id="q89HD" />
+    Rising economies in the global South are emerging as anchors of regional cooperation in trade, technology and payments.
 
-    <strong>Regional cooperation can widen opportunities.</strong> Rising economies in the global South are also emerging as anchors of regional cooperation in trade, technology and payments.
-
-    In Latin America, a system for cross-border trade payments in local currencies has been developed in MERCOSUR. India has agreements with 23 countries to share its digital public infrastructure, with technical cooperation already operating in eight. The Association of Southeast Asian Nations' (ASEAN) payment network links eight countries. In Africa, the Pan-African Payment and Settlement System aims to connect 42 currencies.
-
-    {/* FIGURE III.26 – Rising economies steer regional integration. Economic development-related agreements among seven regional groups since 1980 (number). */}
-    <ChartDataWrapper chart_id="z0onb" />
+    In **Latin America**, **MERCOSUR** has developed a system for cross-border trade payments in local currencies. **India** has agreements with 23 countries to share its digital public infrastructure, with technical cooperation already operating in eight. The Association of Southeast Asian Nations' (**ASEAN**) payment network links eight countries. In **Africa**, the Pan-African Payment and Settlement System aims to connect 42 currencies.
 
     <div className="highlight_container calls_to_action">
       ### Calls to action

@@ -1,0 +1,32 @@
+import { useState } from 'react';
+import { resolveAsset } from '@unctad-infovis/general-tools/helpers/BasePath.js';
+import './IntroVideo.css';
+
+export default function IntroVideo({ url, title, poster_url, languages = [] }) {
+  const [playing, setPlaying] = useState(false);
+  const links = languages.filter(link => link.label && link.url);
+  const playerUrl = new URL(url);
+  playerUrl.searchParams.set('autoplay', '1');
+  playerUrl.searchParams.set('playsinline', '1');
+  return (
+    <div className="intro_video_panel">
+      <div className="intro_video_frame">
+        {playing ? (
+          <iframe src={playerUrl.toString()} title={title || 'Trade and Development Report 2026 video'} allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+        ) : (
+          <button className="intro_video_play" type="button" aria-label="Play Trade and Development Report 2026 video" onClick={() => setPlaying(true)}>
+            <img src={resolveAsset(poster_url)} alt="" width="2000" height="1045" />
+            <span className="intro_video_play_icon" aria-hidden="true">▶</span>
+          </button>
+        )}
+      </div>
+      {links.length > 0 && (
+        <p className="intro_video_languages">Also in{' '}
+          {links.map((link, index) => (
+            <span key={link.label}>{index > 0 && ' · '}<a href={link.url} target="_blank" rel="noreferrer"><bdi>{link.label}</bdi></a></span>
+          ))}
+        </p>
+      )}
+    </div>
+  );
+}
