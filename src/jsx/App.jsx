@@ -15,6 +15,7 @@ import Footer from './components/minisite/Footer.jsx';
 import Header from './components/minisite/Header.jsx';
 import HeaderChapter from './components/minisite/HeaderChapter.jsx';
 import InNumbers from './components/minisite/InNumbers.jsx';
+import ReportCard from './components/minisite/ReportCard.jsx';
 import ChartFocusTrade from './components/trade/ChartFocusTrade.jsx';
 
 import '@unctad-infovis/general-tools/styles/styles.css';
@@ -34,6 +35,7 @@ const components = {
   InNumbers,
   ProgressBar,
   Quote,
+  ReportCard,
   SideScrollingText
 };
 
