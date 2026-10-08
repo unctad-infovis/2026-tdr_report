@@ -107,20 +107,40 @@
           }
         }
         .container_chapters_navigation {
-          display: flex;
-          flex-direction: row;
+          display: grid;
+          grid-template-columns: repeat(4, minmax(0, 170px));
           gap: 10px;
           max-width: var(--un-column-width);
           overflow-x: auto;
           overscroll-behavior-inline: contain;
           padding: 0 0 8px;
           scroll-snap-type: x proximity;
-          button {
+          .chapter_card {
+            position: relative;
+            &.overview_card {
+              --main-color: #009edb;
+              --secondary-color: #0077b8;
+            }
+            .chapter_card_action {
+              background: none;
+              border: 0;
+              border-radius: 0;
+              cursor: pointer;
+              inset: 0;
+              margin: 0;
+              padding: 0;
+              position: absolute;
+              z-index: 1;
+              &:focus-visible {
+                outline: 3px solid var(--un-color-yellow);
+                outline-offset: 3px;
+              }
+            }
             background: none;
             border: 0;
             border-radius: 0;
             cursor: pointer;
-            flex: 0 0 170px;
+            min-width: 0;
             height: auto;
             margin: 0;
             outline: none;
@@ -140,7 +160,7 @@
               flex-direction: column;
               height: 100%;
               margin: 0;
-              width: 170px;
+              width: 100%;
               .chapter_title {
                 background-color: var(--main-color);
                 box-sizing: border-box;
@@ -162,7 +182,7 @@
                 padding: 5px;
                 position: relative;
                 div {
-                  aspect-ratio: var(--un-chapter-card-ratio);
+                  aspect-ratio: 1 / 1;
                   background-position: 50% 50%;
                   background-size: cover;
                 }
@@ -176,17 +196,27 @@
                 display: flex;
                 justify-content: space-between;
                 padding: 5px 5px 0;
-                .chapter_number {
+                .chapter_label {
                   color: #fff;
-                  font-size: var(--un-font-size-xl);
-                  font-weight: var(--un-font-weight-boldest);
+                  font-size: 12px;
+                  font-weight: 700;
+                  letter-spacing: 0.12em;
+                  text-align: left;
+                  text-transform: uppercase;
+                  white-space: nowrap;
                   line-height: var(--un-line-height-normal);
                 }
                 .chapter_download_button {
                   color: #fff;
                   font-size: 0;
                   line-height: 0;
-                  margin-top: -4px;
+                  flex-shrink: 0;
+                  position: relative;
+                  z-index: 2;
+                  &:focus-visible {
+                    outline: 2px solid #fff;
+                    outline-offset: 2px;
+                  }
                   &:before {
                     background-image: url('./icons/icon_download_white.png');
                     background-size: 100%;
@@ -224,35 +254,34 @@
     padding: 0 10px;
   }
   #app-root-2026-tdr_report .app div.container_header_wrapper .container_header .header_bottom .container_chapters_navigation {
+    display: flex;
     flex-direction: column;
     overflow: visible;
     scroll-snap-type: none;
-  }
-  #app-root-2026-tdr_report .app div.container_header_wrapper .container_header .header_bottom .container_chapters_navigation button {
-    flex: 0 0 auto;
-    width: 100%;
-  }
-  #app-root-2026-tdr_report .app div.container_header_wrapper .container_header .header_bottom .container_chapters_navigation button .chapter_navigation {
-    flex-direction: row;
-    width: 100%;
-  }
-  #app-root-2026-tdr_report .app div.container_header_wrapper .container_header .header_bottom .container_chapters_navigation button .chapter_navigation .chapter_meta {
-    order: 1;
-    padding: 0 5px;
-  }
-  #app-root-2026-tdr_report .app div.container_header_wrapper .container_header .header_bottom .container_chapters_navigation button .chapter_navigation .chapter_meta .chapter_number {
-    width: 30px;
-  }
-  #app-root-2026-tdr_report .app div.container_header_wrapper .container_header .header_bottom .container_chapters_navigation button .chapter_navigation .chapter_title {
-    flex: 1;
-    min-height: 0;
-    order: 2;
-    padding: 5px;
-  }
-  #app-root-2026-tdr_report .app div.container_header_wrapper .container_header .header_bottom .container_chapters_navigation button .chapter_navigation .chapter_image {
-    display: none;
-  }
-  #app-root-2026-tdr_report .app div.container_header_wrapper .container_header .header_bottom .container_chapters_navigation button + button {
-    margin-top: 2px;
+    .chapter_card {
+      flex: 0 0 auto;
+      width: 100%;
+      .chapter_navigation {
+        flex-direction: row;
+        width: 100%;
+        .chapter_meta {
+          gap: 5px;
+          order: 1;
+          padding: 0 5px;
+        }
+        .chapter_title {
+          flex: 1;
+          min-height: 0;
+          order: 2;
+          padding: 5px;
+        }
+        .chapter_image {
+          display: none;
+        }
+      }
+    }
+    .chapter_card + .chapter_card {
+      margin-top: 2px;
+    }
   }
 }

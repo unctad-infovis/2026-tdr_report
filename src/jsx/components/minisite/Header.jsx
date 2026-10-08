@@ -4,7 +4,7 @@ import { resolveAsset } from '@unctad-infovis/general-tools/helpers/BasePath.js'
 
 import './Header.css';
 
-function Header({ bg_image_url, chapters, full_report_url, overview_url, subtitle, title, year }) {
+function Header({ bg_image_url, chapters, full_report_url, overview_image_url, overview_url, subtitle, title, year }) {
   const scrollTo = selector => {
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     window.appRef.current.querySelector(selector)?.scrollIntoView({
@@ -27,7 +27,6 @@ function Header({ bg_image_url, chapters, full_report_url, overview_url, subtitl
             <ButtonShare url={window.location.href} defaultOpen position="static" iconBg="rgba(0,0,0,0.45)" iconColor="#fff" size={36} />
           </h3>
           <div className="download_buttons_container">
-            <ButtonAnchor className="overview" url={overview_url} text="Overview" />
             <ButtonAnchor className="full_report" url={full_report_url} text="Full report" />
             <ButtonAnchor url={'.anchor_videos'} text="Videos" />
             <ButtonAnchor url={'.anchor_podcasts'} text="Podcasts" />
@@ -35,8 +34,26 @@ function Header({ bg_image_url, chapters, full_report_url, overview_url, subtitl
             <ButtonAnchor url={'.anchor_fdi_explorer'} text="FDI Explorer" />
           </div>
           <div className="container_chapters_navigation">
+            <div className="chapter_card overview_card">
+              <a className="chapter_card_action" href={overview_url} target="_blank" rel="noreferrer" aria-label="Open Overview PDF: The geoeconomics of development" />
+              <div className="chapter_navigation">
+                <div className="chapter_title">
+                  <h3>The geoeconomics of development</h3>
+                </div>
+                <div className="chapter_image">
+                  <div style={{ backgroundImage: `url(${resolveAsset(overview_image_url)})` }} />
+                </div>
+                <div className="chapter_meta">
+                  <div className="chapter_label">OVERVIEW</div>
+                  <a href={overview_url} target="_blank" className="chapter_download_button" aria-label="Download Overview" rel="noreferrer">
+                    Download Overview
+                  </a>
+                </div>
+              </div>
+            </div>
             {chapters.map((chapter, i) => (
-              <button onClick={() => scrollTo(`.container_chapter_${i + 1}`)} type="button" key={chapter.title}>
+              <div className="chapter_card" key={chapter.title}>
+                <button className="chapter_card_action" onClick={() => scrollTo(`.container_chapter_${i + 1}`)} type="button" aria-label={`Go to chapter ${i + 1}: ${chapter.title}`} />
                 <div className={`chapter_navigation chapter_navigation_${i + 1}`}>
                   <div className="chapter_title">
                     <h3>{chapter.title}</h3>
@@ -45,15 +62,15 @@ function Header({ bg_image_url, chapters, full_report_url, overview_url, subtitl
                     <div style={{ backgroundImage: `url(${resolveAsset(chapter.card_image_url)})` }} />
                   </div>
                   <div className="chapter_meta">
-                    <div className="chapter_number">{i + 1}</div>
+                    <div className="chapter_label">CHAPTER {i + 1}</div>
                     {chapter.pdf_url && (
-                      <a href={chapter.pdf_url} target="_blank" className="chapter_download_button" aria-label="Download chapter" rel="noreferrer">
-                        Download chapter
+                      <a href={chapter.pdf_url} target="_blank" className="chapter_download_button" aria-label={`Download chapter ${i + 1}`} rel="noreferrer">
+                        Download chapter {i + 1}
                       </a>
                     )}
                   </div>
                 </div>
-              </button>
+              </div>
             ))}
           </div>
         </div>

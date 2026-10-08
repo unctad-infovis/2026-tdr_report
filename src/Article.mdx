@@ -13,6 +13,7 @@
   bg_image_url={props.meta.image_url}
   chapters={props.meta.chapters}
   full_report_url={props.meta.full_report_url}
+  overview_image_url={props.meta.overview_image_url}
   overview_url={props.meta.overview_url}
   subtitle={props.meta.subtitle}
   title={props.meta.title}
@@ -63,6 +64,7 @@
 
   <div className="container_chapter container_chapter_1">
     <HeaderChapter
+      chapter_number={1}
       image_url={props.meta.chapters[0].image_url}
       pdf_url={props.meta.chapters[0].pdf_url}
       subtitle={props.meta.chapters[0].subtitle}
@@ -169,6 +171,7 @@
 
   <div className="container_chapter container_chapter_2">
     <HeaderChapter
+      chapter_number={2}
       image_url={props.meta.chapters[1].image_url}
       pdf_url={props.meta.chapters[1].pdf_url}
       subtitle={props.meta.chapters[1].subtitle}
@@ -255,6 +258,7 @@
 
   <div className="container_chapter container_chapter_3">
     <HeaderChapter
+      chapter_number={3}
       image_url={props.meta.chapters[2].image_url}
       pdf_url={props.meta.chapters[2].pdf_url}
       subtitle={props.meta.chapters[2].subtitle}
