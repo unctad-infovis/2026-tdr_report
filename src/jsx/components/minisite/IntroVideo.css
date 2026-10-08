@@ -4,7 +4,7 @@
   gap: 24px;
   grid-template-columns: minmax(0, 1fr) 232px;
   margin: 24px auto 32px;
-  max-width: var(--un-column-width);
+  max-width: 920px;
   width: 100%;
   .intro_video_panel {
     align-self: start;
@@ -69,7 +69,22 @@
       color: #0077b8;
     }
   }
-  @media (max-width: 600px) {
+  @media (min-width: 901px) {
+    .report_card {
+      contain: size;
+      display: flex;
+      flex-direction: column;
+      .report_card_cover {
+        flex: 1 1 0;
+        min-height: 0;
+        object-fit: contain;
+      }
+      .report_card_content {
+        flex: 0 0 auto;
+      }
+    }
+  }
+  @media (max-width: 900px) {
     grid-template-columns: minmax(0, 1fr);
   }
 }
