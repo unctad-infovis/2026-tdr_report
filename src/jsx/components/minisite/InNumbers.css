@@ -121,6 +121,7 @@
           }
         }
         figcaption {
+          color: #fff;
           font-size: var(--un-font-size-xxs);
           line-height: 1.35;
           margin-top: 10px;

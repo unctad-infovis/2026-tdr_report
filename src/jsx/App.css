@@ -246,7 +246,7 @@
         position: absolute;
         /* Overlay fades in with the first text and out with the last one; static fallback elsewhere */
         @supports (animation-timeline: view()) {
-          @media (prefers-reduced-motion: no-preference) {
+          @media (min-width: 769px) and (prefers-reduced-motion: no-preference) {
             animation: side-scroll-overlay linear both;
             animation-range: cover 0% cover 100%;
             animation-timeline: --side-scroll-overlay;
