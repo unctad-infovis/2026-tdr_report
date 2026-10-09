@@ -39,7 +39,7 @@ function Footer({ content = {}, reportUrl = '' }) {
                       {languageLinks.map((link, index) => (
                         <span key={link.label}>
                           {index > 0 && ' · '}
-                          <a href={link.url} target="_blank" rel="noreferrer"><bdi>{link.label}</bdi></a>
+                          <a href={link.url} lang={link.lang} dir={link.dir} target="_blank" rel="noreferrer"><bdi>{link.label}</bdi></a>
                         </span>
                       ))}
                     </p>

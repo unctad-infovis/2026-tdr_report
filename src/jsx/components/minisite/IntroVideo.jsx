@@ -37,7 +37,7 @@ export default function IntroVideo({ url, title, poster_url, languages = [] }) {
       {links.length > 0 && (
         <p className="intro_video_languages">Also in{' '}
           {links.map((link, index) => (
-            <span key={link.label}>{index > 0 && ' · '}<a href={link.url} target="_blank" rel="noreferrer"><bdi>{link.label}</bdi></a></span>
+            <span key={link.label}>{index > 0 && ' · '}<a href={link.url} lang={link.lang} dir={link.dir} target="_blank" rel="noreferrer"><bdi>{link.label}</bdi></a></span>
           ))}
         </p>
       )}

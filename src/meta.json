@@ -54,8 +54,25 @@
         "url": "https://vimeo.com/1233786777"
       },
       {
+        "label": "Bahasa Indonesia",
+        "lang": "id",
+        "url": "https://vimeo.com/1234135447"
+      },
+      {
         "label": "Português",
-        "url": ""
+        "lang": "pt",
+        "url": "https://vimeo.com/1234128662"
+      },
+      {
+        "label": "Kiswahili",
+        "lang": "sw",
+        "url": "https://vimeo.com/1234128672"
+      },
+      {
+        "label": "اردو",
+        "lang": "ur",
+        "dir": "rtl",
+        "url": "https://vimeo.com/1234128680"
       }
     ],
     "launch_event_title": "Trade and Development Report 2026 – Press conference",

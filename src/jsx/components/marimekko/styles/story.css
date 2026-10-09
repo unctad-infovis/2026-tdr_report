@@ -1,3 +1,8 @@
+/* Clip horizontal overflow without creating a scrolling ancestor for sticky charts. */
+html:has(:is(#app-root-2026-tdr_report, #app-root-2026-tdr_report-marimekko-focus)),
+body:has(:is(#app-root-2026-tdr_report, #app-root-2026-tdr_report-marimekko-focus)) {
+  overflow-x: clip;
+}
 :is(#app-root-2026-tdr_report, #app-root-2026-tdr_report-marimekko-focus, #app-root-2026-tdr_report-marimekko-chart) .app {
   .chart_marimekko_story {
     background: var(--chart-bg);
