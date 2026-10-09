@@ -8,7 +8,7 @@ const STAGES = [
     key: 'introduction',
     column: null,
     headline: 'Who captures the value of an AI advanced server rack?',
-    body: 'Each column shows a component. The wider the column, the bigger its share of the value created.'
+    body: 'A server rack is a computing system used in data centres. Each column shows a component. The wider the column, the bigger its share of the value created.'
   },
   {
     key: 'production',
@@ -24,7 +24,7 @@ const STAGES = [
   {
     key: 'profit',
     column: 'post_tax_profit',
-    headline: 'After-tax profit takes 68%.',
+    headline: 'Profit after tax takes 68%.',
     body: 'One chip designer captures most of it.'
   },
   {

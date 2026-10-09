@@ -6,7 +6,7 @@ import { CSV, SUPPLIERS } from './custom/data.js';
 
 import './styles/styles.css';
 
-const TITLE = 'After-tax profit takes 68% of the value traced in an AI advanced server rack';
+const TITLE = 'Profit after tax takes most of the value in an advanced AI server system';
 const DESCRIPTION = 'Traced value added in producing one AI advanced server rack by component and supplier group, percentage';
 const NOTE =
   'Traced value added represents more than 87 per cent of the total value added (i.e. about $3.3 million) of an NVIDIA GB200 NVL72 server rack. Component width is proportional to its share of traced value added, while vertical segments show the distribution of each component across supplier groups. “Others” combines rack hardware, thermal, power delivery and board electronics.';
@@ -98,7 +98,7 @@ const ChartMarimekko = ({ activeColumn = null, fadeIn = true, scrollStory = fals
             </svg>
             <h3>{TITLE}</h3>
           </div>
-          <p className="chart_description">{scrollStory ? 'Share of traced value added by component and supplier group, percentage' : DESCRIPTION}</p>
+          <p className="chart_description">{scrollStory ? 'Share of traced value added in one NVIDIA GB200 NVL72 server rack, by component and supplier group, percentage' : DESCRIPTION}</p>
           <ul className="chart_legend">
             {SUPPLIERS.map(s => (
               <li key={s.key}>

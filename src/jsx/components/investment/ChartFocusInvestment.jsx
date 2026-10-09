@@ -6,7 +6,7 @@ import { CSV, GROUPS, SECTORS, SOURCE } from './data.js';
 import '../trade/ChartFocusTrade.css';
 import './ChartFocusInvestment.css';
 
-const TITLE = 'Developed economies capture most strategic investment';
+const TITLE = 'Developed economies capture most strategic foreign investment';
 const STAGES = [
   { key: 'baseline', headline: 'In most industries, new investment projects are split almost evenly.', body: '49% goes to developed economies, 51% to developing ones.' },
   { key: 'strategic', headline: 'But in the industries governments now see as strategic, the picture changes.' },

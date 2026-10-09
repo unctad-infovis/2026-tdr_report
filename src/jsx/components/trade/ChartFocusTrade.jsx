@@ -5,7 +5,7 @@ import { CSV, DATA, NOTE } from './data.js';
 
 import './ChartFocusTrade.css';
 
-const TITLE = 'Trade reaches farther as partner compatibility edges up';
+const TITLE = 'Trade reaches farther as partner compatibility rises';
 const STAGES = [
   {
     key: 'introduction',

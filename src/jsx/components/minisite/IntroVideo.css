@@ -86,5 +86,16 @@
   }
   @media (max-width: 900px) {
     grid-template-columns: minmax(0, 1fr);
+    .report_card {
+      align-items: center;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+      .report_card_cover {
+        max-width: 180px;
+      }
+      .report_card_content {
+        min-width: 0;
+      }
+    }
   }
 }
