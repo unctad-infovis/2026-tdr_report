@@ -88,7 +88,24 @@
       }
     ],
     "video_title": "Trade and Development Report 2026",
-    "video_url": "https://player.vimeo.com/video/1233617256"
+    "video_url": "https://player.vimeo.com/video/1233617256",
+    "press_videos": [
+      {
+        "title": "Full press conference",
+        "url": "https://player.vimeo.com/video/1234324543?h=c3aa865a8a",
+        "thumbnail_url": "https://i.vimeocdn.com/video/2210256601-ba393bfc1244fa06234f49ddb5ed081cd8ee7206f08f45376dffa083be8d7bab-d_295x166?region=us"
+      },
+      {
+        "title": "Africa mines the world's cobalt but reaps little of its value",
+        "url": "https://player.vimeo.com/video/1234359346",
+        "thumbnail_url": "https://i.vimeocdn.com/video/2210301135-36d2aa6f86e26f3f0f06a81665bd62ee3dbdcad5c3720ead81a994072854cc92-d_200x150?region=us"
+      },
+      {
+        "title": "Global growth projected to slow to 2.6% in 2026",
+        "url": "https://player.vimeo.com/video/1234359374",
+        "thumbnail_url": "https://i.vimeocdn.com/video/2210301048-191d1acbf0b47a2257062e35fe0c913ed6017a2f3b8fb740ce3b45f7df524680-d_200x150?region=us"
+      }
+    ]
   },
   "full_report_cover_url": "assets/img/2026-tdr_report_full_cover.jpg?v=1",
   "full_report_languages": []
