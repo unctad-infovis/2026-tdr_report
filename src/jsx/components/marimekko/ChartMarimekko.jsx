@@ -17,7 +17,7 @@ const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: r
 export const ChartMarimekkoMeta = () => (
   <div className="chart_marimekko_meta">
     <div>
-      <em>Source:</em> {SOURCE}
+      <em>Source:</em> {SOURCE} based on <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7584299" target="_blank" rel="noreferrer">Heydemann and Maystre (2026)</a>.
     </div>
     <div>
       <em>Note:</em> {NOTE}
