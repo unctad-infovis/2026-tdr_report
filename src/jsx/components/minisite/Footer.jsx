@@ -48,7 +48,7 @@ function Footer({ content = {}, reportUrl = '' }) {
             <div className="footer_content">
               {video_url && (
                 <>
-                  <h3>Watch the video</h3>
+                  <h3>Watch the video report</h3>
                   <VideoEmbed title={video_title || 'Video'} url={video_url} />
                   {languageLinks.length > 0 && (
                     <p className="language_links">Also in{' '}
