@@ -69,6 +69,8 @@
             font-size: var(--un-font-size-normal);
             line-height: 1.5;
             margin: 8px 0 0;
+            max-width: 100%;
+            width: 100%;
           }
           .iframe_container {
             margin-bottom: 12px;
