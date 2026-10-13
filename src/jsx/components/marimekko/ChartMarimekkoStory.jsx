@@ -7,8 +7,8 @@ const STAGES = [
   {
     key: 'introduction',
     column: null,
-    headline: 'Who captures the value of an AI advanced server rack?',
-    body: 'A server rack is a computing system used in data centres. Each column shows a component. The wider the column, the bigger its share of the value created.'
+    headline: 'Who captures the value of an advanced AI server rack?',
+    body: 'A server rack is a computing system used in data centres. Each column shows a component of value added. The wider the column, the bigger its share of the total value created.'
   },
   {
     key: 'production',
@@ -31,10 +31,10 @@ const STAGES = [
     key: 'conclusion',
     column: null,
     headline: 'Four supplier groups capture 82% of the value.',
-    body: 'Most developing economies capture only a marginal share, mainly through raw materials. Taking part in production isn’t the same as capturing its value.'
+    body: 'Most developing economies capture only a marginal share, mainly through assembly and raw materials. Taking part in production isn’t the same as capturing value.'
   }
 ];
 
-const ChartMarimekkoStory = () => <FocusChartStory label="How value added is distributed in an AI advanced server rack" stages={STAGES} renderChart={step => <ChartMarimekko activeColumn={STAGES[step].column} scrollStory />} />;
+const ChartMarimekkoStory = () => <FocusChartStory label="How value added is distributed in an advanced AI server rack" stages={STAGES} renderChart={step => <ChartMarimekko activeColumn={STAGES[step].column} scrollStory />} />;
 
 export default ChartMarimekkoStory;
